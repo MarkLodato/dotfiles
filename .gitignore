@@ -1,0 +1,118 @@
+# Only match .*
+/*
+!/.*
+
+# Ignore default dotfiles.  Even though these are covered by .config/git/ignore
+# we need to re-ignore them here because the !/.* above un-ignores them.
+.*.pyc
+.*.sw[a-z]
+.*.un~
+
+# Top-level files and directories that I don't care about.
+/.ICEauthority
+/.Xauthority
+/.adobe
+/.android
+/.appcfg_nag
+/.aptitude
+/.bash_history
+/.cache
+/.compiz
+/.compiz-1
+/.cups
+/.dbus
+/.dmrc
+/.eclipse
+/.gegl-0.0
+/.gimp-2.6
+/.gitignore.swp
+/.gitk
+/.gksu.lock
+/.gmc-sync-nssdb.log
+/.gnome
+/.gnome2
+/.gnome2_private
+/.goutputstream-*
+/.gstreamer-0.10
+/.gtk-bookmarks
+/.gvfs
+/.irssi
+/.kde
+/.lesshst
+/.local
+/.macromedia
+/.mcoprc
+/.mission-control
+/.news_time
+/.nv
+/.nvidia-settings-rc
+/.pki
+/.psi
+/.pulse
+/.pulse-cookie
+/.qt
+/.rnd
+/.selected_editor
+/.sqlite_history
+/.ssl_vpn_request.yml
+/.swp
+/.swt
+/.thumbnails
+/.viminfo
+/.wireshark
+/.xsession-errors
+/.xsession-errors.old
+/.ycm_extra_conf.py
+/.zcompdump
+/.zcompdumps
+/.zhistfile
+
+# No longer needed.
+/.mozilla
+
+# Top-level directories that might contain some useful configuration, but I am
+# just too lazy to try to extract the important bits from all the cruft.
+/.gconf
+/.matplotlib
+/.qalculate
+/.xchat2
+
+# Ignore temp / cache files and directories.
+/.curl/cookies
+/.nx/temp
+/.zsh/cache
+/.vim/.netrwhist
+
+# Ignore vim bundles, which can be downloaded again.
+/.vim/bundle
+
+# The log file is created by YCM, I think.
+/.vim/data/log
+
+# Only track specific files in some directories.
+/.ssh/*
+!/.ssh/config
+
+# The .config mostly has crap we don't care about, but there are a few
+# important things in there.
+/.config/*
+
+!/.config/user-dirs.*
+
+!/.config/ipython
+/.config/ipython/profile_default/db
+/.config/ipython/profile_default/history.sqlite
+/.config/ipython/profile_default/log
+/.config/ipython/profile_default/pid
+/.config/ipython/profile_default/security
+
+!/.config/git
+
+# Even though ~/local/bin are not dotfiles, I usually want them whenever I want
+# dotfiles.
+!/local
+/local/*
+!/local/bin
+/local/bin/.gitignore
+
+# May care about /.config/menus/ one day.

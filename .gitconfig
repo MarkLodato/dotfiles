@@ -1,0 +1,58 @@
+[user]
+	name = Mark Lodato
+	email = lodato@google.com
+[color]
+	ui = auto
+[alias]
+	diffc = diff --cached
+	diffw = diff --color-words
+	diffcw = diff --cached --color-words
+	diffwc = diff --cached --color-words
+	co = checkout
+	k = !sh -c 'gitk \"$@\" &' git-k
+	#k = !sh -c '[ "$#" -eq 0 ] && gitk --all --date-order HEAD || gitk "\"$@\"" &' git-k
+	#kt = !sh -c '[ "$#" -eq 0 ] && gitk --all HEAD || gitk "\"$@\"" &' git-k
+	l   = log --graph --decorate --oneline --date-order
+	lt  = log --graph --decorate --oneline
+	la  = log --graph --decorate --oneline --all --remotes --date-order
+	lat = log --graph --decorate --oneline --all --remotes
+	ls  = log --graph --decorate --oneline --date-order -5
+	s = status -sb
+	tag-sorted = !git tag | xargs -IT git log -n1 --format=%at-T T | sort -rnk1 | cut -d- -f2-
+	ack = -c color.grep.filename=6 grep --break --heading
+	mergef = merge --ff-only
+	lint = !git5 lint
+	locate = !sh -c 'cd \"$GIT_PREFIX\" && git ls-files \"$(git rev-parse --show-cdup)\" | ([ "$#" -eq 0 ] && cat || grep --color=auto \"$@\")' -
+	diff5 = !cd $GIT_PREFIX && git diff $(git5 status --base)
+	b = recent-branches
+	lb = !bash -c 'f() { git log --graph --decorate --oneline --date-order \"$@\" \"$(git merge-base --octopus \"$@\")^!\" ";" } ";" f \"${1-HEAD}\" \"${2-upstream}\" \"${@:3}\"' -
+[interactive]
+	singlekey = 1
+[log]
+	date = iso
+[color "diff"]
+	func = 176
+[color "grep"]
+	filename = 246
+	linenumber = 246
+	function = 176
+[merge]
+	tool = gvimdiff
+	conflictstyle = diff3
+	defaultToUpstream = true
+[rebase]
+	autosquash = true
+[init]
+	templatedir = ~/.git_templates
+[diff]
+	tool = meld
+	mnemonicprefix = true
+[clangFormat]
+	style = Google
+[push]
+	default = simple
+[credential]
+	helper = gnome-keyring
+[recent-branches]
+	since = 5 months ago
+	ignore = ^junk/

@@ -1,0 +1,9 @@
+# For the Ambience theme, make the scrollbar troughs darker.
+style "scrollbar-fix" {
+  engine "murrine"
+  {
+    trough_shades = {0.42, 0.48}
+  }
+}
+
+widget_class "*Scrollbar" style "scrollbar-fix"

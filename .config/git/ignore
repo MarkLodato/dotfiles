@@ -1,0 +1,4 @@
+# Ignore vim temporary files.
+.*.sw[a-z]
+.*.un~
+

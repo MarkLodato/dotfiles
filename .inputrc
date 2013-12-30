@@ -1,0 +1,13 @@
+$include /etc/inputrc
+
+# UTF-8 / ALT-key settings (xterm must be set up correctly, too)
+set meta-flag on
+set convert-meta off
+set output-meta on
+
+# Show all options on first tab press.
+set show-all-if-ambiguous on
+
+# Sweet.
+"\ep":history-search-backward
+"\en":history-search-forward

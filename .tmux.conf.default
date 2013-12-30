@@ -1,0 +1,135 @@
+bind-key        C-b send-prefix
+bind-key        C-o rotate-window
+bind-key        C-z suspend-client
+bind-key      Space next-layout
+bind-key          ! break-pane
+bind-key          " split-window
+bind-key          # list-buffers
+bind-key          $ command-prompt -I #S "rename-session '%%'"
+bind-key          % split-window -h
+bind-key          & confirm-before -p "kill-window #W? (y/n)" kill-window
+bind-key          ' command-prompt -p index "select-window -t ':%%'"
+bind-key          ( switch-client -p
+bind-key          ) switch-client -n
+bind-key          , command-prompt -I #W "rename-window '%%'"
+bind-key          - delete-buffer
+bind-key          . command-prompt "move-window -t '%%'"
+bind-key          0 select-window -t :0
+bind-key          1 select-window -t :1
+bind-key          2 select-window -t :2
+bind-key          3 select-window -t :3
+bind-key          4 select-window -t :4
+bind-key          5 select-window -t :5
+bind-key          6 select-window -t :6
+bind-key          7 select-window -t :7
+bind-key          8 select-window -t :8
+bind-key          9 select-window -t :9
+bind-key          : command-prompt
+bind-key          ; last-pane
+bind-key          = choose-buffer
+bind-key          ? list-keys
+bind-key          D choose-client
+bind-key          L switch-client -l
+bind-key          [ copy-mode
+bind-key          ] paste-buffer
+bind-key          c new-window
+bind-key          d detach-client
+bind-key          f command-prompt "find-window '%%'"
+bind-key          i display-message
+bind-key          l last-window
+bind-key          n next-window
+bind-key          o select-pane -t :.+
+bind-key          p previous-window
+bind-key          q display-panes
+bind-key          r refresh-client
+bind-key          s choose-session
+bind-key          t clock-mode
+bind-key          w choose-window
+bind-key          x confirm-before -p "kill-pane #P? (y/n)" kill-pane
+bind-key          { swap-pane -U
+bind-key          } swap-pane -D
+bind-key          ~ show-messages
+bind-key      PPage copy-mode -u
+bind-key -r      Up select-pane -U
+bind-key -r    Down select-pane -D
+bind-key -r    Left select-pane -L
+bind-key -r   Right select-pane -R
+bind-key        M-1 select-layout even-horizontal
+bind-key        M-2 select-layout even-vertical
+bind-key        M-3 select-layout main-horizontal
+bind-key        M-4 select-layout main-vertical
+bind-key        M-5 select-layout tiled
+bind-key        M-n next-window -a
+bind-key        M-o rotate-window -D
+bind-key        M-p previous-window -a
+bind-key -r    M-Up resize-pane -U 5
+bind-key -r  M-Down resize-pane -D 5
+bind-key -r  M-Left resize-pane -L 5
+bind-key -r M-Right resize-pane -R 5
+bind-key -r    C-Up resize-pane -U
+bind-key -r  C-Down resize-pane -D
+bind-key -r  C-Left resize-pane -L
+bind-key -r C-Right resize-pane -R
+base-index 0
+bell-action any
+bell-on-alert off
+default-command ""
+default-path ""
+default-shell "/usr/bin/zsh"
+default-terminal "screen"
+destroy-unattached off
+detach-on-destroy on
+display-panes-active-colour red
+display-panes-colour blue
+display-panes-time 1000
+display-time 750
+history-limit 2000
+lock-after-time 0
+lock-command "lock -np"
+lock-server on
+message-attr none
+message-bg yellow
+message-command-attr none
+message-command-bg black
+message-command-fg yellow
+message-fg black
+message-limit 20
+mouse-resize-pane off
+mouse-select-pane off
+mouse-select-window off
+mouse-utf8 on
+pane-active-border-bg default
+pane-active-border-fg green
+pane-border-bg default
+pane-border-fg default
+prefix C-b
+prefix2 none
+repeat-time 500
+set-remain-on-exit off
+set-titles off
+set-titles-string "#S:#I:#W - "#T""
+status on
+status-attr none
+status-bg green
+status-fg black
+status-interval 15
+status-justify left
+status-keys emacs
+status-left "[#S]"
+status-left-attr none
+status-left-bg default
+status-left-fg default
+status-left-length 10
+status-right ""#22T" %H:%M %d-%b-%y"
+status-right-attr none
+status-right-bg default
+status-right-fg default
+status-right-length 40
+status-utf8 on
+terminal-overrides "*88col*:colors=88,*256col*:colors=256,xterm*:XT:Ms=\E]52;%p1%s;%p2%s\007:Cc=\E]12;%p1%s\007:Cr=\E]112\007:Cs=\E[%p1%d q:Csr=\E[2 q,screen*:XT"
+update-environment "DISPLAY SSH_ASKPASS SSH_AUTH_SOCK SSH_AGENT_PID SSH_CONNECTION WINDOWID XAUTHORITY"
+visual-activity off
+visual-bell off
+visual-content off
+visual-silence off
+word-separators " -_@"

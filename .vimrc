@@ -1,0 +1,234 @@
+" Vundle - all of the following is required
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" Bundles
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'VisIncr'
+Bundle 'a.vim'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-characterize'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-rsi'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+" Consider installing conque (which i don't think is Vundle-compatible)
+
+" Bundles that are nice but that I don't need anymore:
+"Bundle 'scrooloose/nerdcommenter'  " vim-commentary is good enough
+
+" General options
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set colorcolumn=+1
+set display+=lastline
+set expandtab
+set formatoptions=tcq1
+set guioptions-=T
+set guioptions-=m
+set history=5000
+set hlsearch
+set incsearch
+set laststatus=2
+set noautowrite
+set noequalalways
+set nrformats-=octal
+set ruler
+set scrolloff=1
+set shiftround
+set shiftwidth=4
+set showcmd
+set sidescrolloff=5
+set softtabstop=4
+set smarttab
+set suffixes+=.pdf,.ps,.lo,.la
+set suffixes-=.h
+set tags+=~/.tags
+set ttimeout
+set ttimeoutlen=50  " timeout (in ms) for ESC-based keys
+set undofile
+set viminfo='100,<500,s10,h
+set wildmenu
+set winaltkeys=no
+set textwidth=78
+set cinoptions+=g0(0t0p0
+
+syntax on
+syntax sync maxlines=750
+
+if has('autocmd')
+  filetype plugin indent on
+endif
+
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux'
+  set t_Co=16
+endif
+
+" Conditional options
+if has("mouse")
+  set mouse=a
+  set mousemodel=popup
+endif
+if v:version >= 700
+  set spelllang=en_us
+endif
+
+" Plugins
+runtime ftplugin/man.vim
+runtime macros/matchit.vim
+
+" Restore cursor position when opening a file
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
+" Fix encoding issues.
+if &encoding ==# 'latin1' && has('gui_running')
+  set encoding=utf-8
+endif
+
+" Show marker for tabs, and highlight spaces before tabs and at EOL
+set list
+set listchars=tab:»\ ,nbsp:␣
+hi default link WhiteSpaceError Error
+match WhiteSpaceError /\(\s\+\%#\@!$\)\|\( \+\ze\t\)/
+
+if has("gui_running") || &t_Co >= 8
+  "colorscheme midnight2
+  colorscheme darkblue
+  " guifont?
+else
+  set background=dark
+endif
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
+endif
+
+" Change default behavior of some keys
+noremap <Leader>q Q
+noremap <Leader>Q gQ
+noremap gQ gq
+noremap Q gq
+noremap Y y$
+
+" Remove annoying keys
+map! <C-?> <BS>
+nnoremap <F1> <nop>
+inoremap <F1> <nop>
+vnoremap K k
+nnoremap K k
+vnoremap <Leader>K K
+nnoremap <Leader>K K
+vnoremap J j
+vnoremap <Leader>J J
+
+" Some useful mappings
+map <Leader>m :make<cr>
+cnoremap <A-p> <Up>
+cnoremap <A-n> <Down>
+
+" Emacs bindings
+inoremap <C-a> <Home>
+cnoremap <C-a> <Home>
+inoremap <C-e> <End>
+cnoremap <C-e> <End>
+inoremap <A-w> <C-o>w
+inoremap <A-W> <C-o>W
+inoremap <A-b> <C-o>b
+inoremap <A-B> <C-o>B
+inoremap <A-BS> x<C-o>dB<C-o>x
+
+" Vi command-mode bindings for insert mode
+inoremap <C-t> <C-o>t
+inoremap <C-f> <C-o>t
+inoremap <A-t> <C-o>t
+inoremap <C-t> <C-o>t
+
+" Map \s<motion> to :sort that area, and \ss to :sort in the paragraph.
+function! SortMap(type) range
+  '[,']sort
+endfunction
+nnoremap <Leader>s :set opfunc=SortMap<CR>g@
+nmap <Leader>ss <Leader>sip
+vnoremap <Leader>s :sort<CR>
+
+" Create the window that I like
+function! BigWindow()
+  top vsplit
+  set columns=161
+  set lines=90
+  execute "normal \<C-w>="
+endfunction
+command! BigWindow call BigWindow()
+
+" Syntax file options
+let python_highlight_numbers = 1
+let python_highlight_builtins = 1
+let python_highlight_exceptions = 1
+
+" Useful functions
+function! ReverseLineOrder() range
+  let lnum = a:firstline
+  for line in reverse(getline(a:firstline, a:lastline))
+    call setline(lnum, line)
+    let lnum = lnum+1
+  endfor
+endfunction
+command! -range=% -bar ReverseLineOrder <line1>,<line2>call ReverseLineOrder()
+
+" a.vim
+let g:alternateNoDefaultAlternate = 1
+let g:alternateRelativeFiles = 1
+
+" visincr.vim
+vmap <C-a> :I<CR>
+vmap <C-x> :I -1<CR>
+
+" html.vim
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
+" Allow % (matchit.vim) to work with merge conflict markers.
+" This is simplified from rhysd/conflict_marker.vim.
+" Unfortunately, due to b:match_skip, this will fail if the conflict marker is
+" inside a multi-line string or comment.
+function! s:add_conflict_markers_to_match_words()
+  let l:conflict_words = '^<<<<<<<.*:^\%(|||||||\|=======\).*:^>>>>>>>.*'
+  if exists('b:match_words')
+    let b:match_words = b:match_words . ',' . l:conflict_words
+
+    " c.vim stupidly sets match_words to contain 'matchpairs', which doesn't
+    " work properly and causes our pattern to break for some unknown reason.
+    " matchit.vim already honors 'matchpairs', so we should strip it off.
+    if b:match_words[:strlen(&matchpairs)] == &matchpairs . ','
+      let b:match_words = b:match_words[strlen(&matchpairs)+1:]
+    endif
+  else
+    let b:match_words = l:conflict_words
+  endif
+endfunction
+augroup ConflictMarkers
+  autocmd!
+  autocmd BufReadPost * call s:add_conflict_markers_to_match_words()
+augroup END
+
+" Put anything that shouldn't be sync'd to GitHub in the following file.
+if filereadable($HOME.'/.vim/rc-private.vim')
+  source ~/.vim/rc-private.vim
+endif
