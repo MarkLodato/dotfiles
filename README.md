@@ -30,3 +30,10 @@ From now on, use `gd` instead of `git`.  Examples:
 The .gitignore is set up to monitor any new dotfiles but to ignore files not
 starting with a dot at the top level.  That way, `git status` will indicate any
 new files that should be added to (or ignored by) the repository.
+
+### Alternate Installation
+
+An alternate, much more widely suggested strategy is to check out the files to
+a subdirectory and then set up symlinks for each file.  While this is easier to
+understand, it requires much more maintenance and does not automatically detect
+new files.
