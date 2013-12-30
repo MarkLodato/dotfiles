@@ -4,8 +4,8 @@
 
 [[ -r ~/.zsh/rc-private-top.zsh ]] && source ~/.zsh/rc-private-top.zsh
 
-[[ -n $MY_MACHINE ]] && MY_MACHINE=
-[[ -n $THIS_MACHINE ]] && THIS_MACHINE=$(hostname -s)
+[[ -z $MY_MACHINE ]] && MY_MACHINE=
+[[ -z $THIS_MACHINE ]] && THIS_MACHINE=$(hostname -s)
 
 
 # ----------------------------------------------------------------------------
@@ -113,7 +113,7 @@ alias switch=swhich
 # because then git will think we're *always* in a git repository.  So, we
 # instead put the repository on NFS and use this "gd" alias to manage dotfiles.
 # We could use symlinks intead, but this seems easier.
-[[ -n $HOME_GITDIR ]] && HOME_GITDIR=$HOME/dotfiles.git
+[[ -z $HOME_GITDIR ]] && HOME_GITDIR=$HOME/dotfiles.git
 alias gd='git --git-dir=$HOME_GITDIR --work-tree=$HOME'
 
 
