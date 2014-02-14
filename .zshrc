@@ -232,6 +232,9 @@ compinit -u
 autoload -U bashcompinit
 bashcompinit
 
+# Use our version of git-completion.bash, not the one in /etc.
+zstyle ':completion:*:*:git:*' script ~/.zsh/functions/git-completion.bash
+
 # Turn on caching
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
