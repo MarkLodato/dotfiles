@@ -1,0 +1,3 @@
+! Make the forward button skip to the next audio track.
+! original keycode 167 = XF86Forward NoSymbol XF86Forward
+keycode 167 = XF86AudioNext NoSymbol XF86AudioNext
