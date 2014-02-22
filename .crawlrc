@@ -1,0 +1,149 @@
+# See /usr/share/doc/crawl-common/options_guide.txt
+
+tile_skip_title = true
+default_manual_training = true
+
+auto_exclude += oklob,statue,curse skull,roxanne,hyperactive,lightning spire
+auto_exclude += mimic
+autoinscribe += curare:!*
+explore_stop_pickup_ignore += curare
+autopickup_exceptions += <curare-tipped needle
+autopickup_exceptions += <potion of mutation
+travel_delay = 40
+: if you.race() ~= "Vampire" then
+autopickup_exceptions += <
+: end
+
+auto_drop_chunks = rotten
+#auto_eat_chunks = true
+
+spell_slot += Blink:b
+spell_slot += Call imp:i
+spell_slot += Conjure flame:F
+spell_slot += Iskenderun's mystic blast:a
+spell_slot += Lightning bolt:l
+spell_slot += Magic dart:z
+spell_slot += Mephitic cloud:c
+spell_slot += Poisonous cloud:p
+spell_slot += Repel missiles:r
+spell_slot += Slow:s
+spell_slot += Invisibility:i
+spell_slot += Confuse:c
+spell_slot += Corona:n
+spell_slot += Ensorcelled hibernation:e
+spell_slot += Apportation:a
+
+hp_warning = 50
+mp_warning = 25
+hp_colour = 75:yellow, 50:lightred, 25:red
+mp_colour = 75:yellow, 50:lightred, 25:red
+stat_colour = 1: red, 3:lightred, 7:yellow
+channel.monster_damage = darkgrey
+message_colour += yellow:(resists|to resist)
+message_colour += red:unaffected
+message_colour += red:You kill
+message_colour += red:You feel your power drain away
+message_colour += red:You miscast
+message_colour += yellow:corrodes?
+
+note_hp_percent = 25
+note_all_skill_levels = true
+
+autoinscribe += distortion:!w
+autoinscribe += potion.*mutation:!q
+autoinscribe += potion.*berserk rage:!q
+autoinscribe += scroll.*torment:!r
+autoinscribe += scroll.*silence:!r
+autoinscribe += of faith:!P
+autoinscribe += rod of:!a
+autoinscribe += staff of (Wucad Mu|energy|channeling|wizardry|power):!a
+autoinscribe += staff of (conjuration|enchantment|summoning|poison):!a
+
+###########
+# Prompts #
+###########
+more := force_more_message
+
+# Dangerous stuff
+more += mutation:
+#more += danger:
+#more += warning:
+#more += comes? into view
+more += is unaffected
+more += LOW \S+ WARNING
+more += freezes? and shatters?
+more += scroll.*catch(es?) fire
+
+# Important features
+more += You have a vision of.*gates?
+more += interdimensional caravan
+more += distant snort
+more += Found a gateway leading out of the Abyss
+more += Found .* abyssal rune of Zot
+more += terrible weight on your shoulders
+
+# Interrupts
+more += You don't.* that spell
+more += You miscast (Controlled Blink|Blink|Death's|Borg|Necromutation)
+more += You can't (read|drink) that
+more += That item cannot be evoked
+more += This wand has no charges
+more += You have disarmed
+more += Something interferes with your magic
+
+# Bad things
+more += Your surroundings flicker
+more += sense of stasis
+more += Your amulet of stasis
+more += You cannot teleport right now
+more += The writing blurs in front of your eyes
+more += You fall through a shaft
+more += A huge blade swings out and slices into you!
+more += (blundered into a|invokes the power of) Zot
+more += Ouch! That really hurt!
+more += dispelling energy hits you
+more += You convulse
+more += You are (blasted|electrocuted)!
+more += You are.*(confused|poisoned)
+more += flesh start
+#more += (starving|devoid of blood)
+more += wrath finds you
+more += lose consciousness
+more += You are too injured to fight blindly
+more += calcifying dust hits
+more += Space warps horribly around you
+more += hits you.*distortion
+more += Space bends around you\.
+more += watched by something
+more += about to expire
+more += less protected from missiles
+
+# Expiring effects
+more += You feel yourself slow down
+more += You flicker (for a moment|back into view)
+more += less insulated
+more += You are starting to lose your buoyancy
+more += You lose control over your flight
+more += Your hearing returns
+more += Your transformation is almost over
+more += You have a feeling this form
+more += You feel yourself come back to life
+more += uncertain
+more += time is quickly running out
+more += life is in your own hands
+more += is no longer charmed
+more += shroud falls apart
+more += You start to feel a little slower
+more += Your skin feels tender
+more += Your extra speed is starting to run out
+
+# Others
+more += You have reached level
+more += Your scales start
+more += You feel monstrous
+more += Jiyva alters your body
+: if you.god() == "Xom" then
+more += god:
+: end
+
+
