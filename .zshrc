@@ -223,8 +223,8 @@ setopt push_d_ignore_dups
 setopt rm_star_silent
 
 HISTFILE=~/.zhistfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 
 WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
