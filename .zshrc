@@ -201,6 +201,9 @@ bindkey '\eI' incarg
 bindkey '\M-i' incarg
 bindkey '\M-I' incarg
 
+# Make ^V display a "^" while it is waiting for the next key, like vi does.
+bindkey '^V' vi-quoted-insert
+
 
 # ----------------------------------------------------------------------------
 #                                   Options
