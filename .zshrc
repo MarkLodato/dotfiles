@@ -113,7 +113,14 @@ alias switch=swhich
 # because then git will think we're *always* in a git repository.  So, we
 # instead put the repository on NFS and use this "gd" alias to manage dotfiles.
 # We could use symlinks intead, but this seems easier.
-[[ -z $HOME_GITDIR ]] && HOME_GITDIR=$HOME/dotfiles.git
+if [[ -z $HOME_GITDIR ]]; then
+  for HOME_GITDIR in ~/p/dotfiles.git ~/personal/dotfiles.git \
+                     ~/dotfiles.git; do
+    if [[ -d $HOME_GITDIR ]]; then
+      break
+    fi
+  done
+fi
 alias gd='git --git-dir=$HOME_GITDIR --work-tree=$HOME'
 
 
