@@ -1,0 +1,23 @@
+[ui]
+username = Mark Lodato <lodatom@gmail.com>
+
+[extensions]
+hgext.bookmarks =
+hgext.hg-git = /home/mark/hg-git/hggit
+hgext.mq =
+hgext.convert =
+color =
+hgk =
+pager =
+parentrevspec =
+transplant =
+
+[pager]
+pager = LESS='FSRX' less
+attend = log
+
+[diff]
+git = 1
+
+[git]
+intree = True
