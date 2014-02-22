@@ -1,0 +1,49 @@
+begin
+    button = KEY_CHANNELUP
+    prog = irexec
+    config = /usr/bin/pactl -- set-sink-volume 0 +2%  # vol+
+    repeat = 1
+end
+
+begin
+    button = KEY_CHANNELDOWN
+    prog = irexec
+    config = /usr/bin/pactl -- set-sink-volume 0 -2%  # vol-
+    repeat = 1
+end
+
+begin
+    button = KEY_PLAY
+    prog = irexec
+    config = /home/mark/p/scripts/pithos-control play
+end
+
+begin
+    button = KEY_PAUSE
+    prog = irexec
+    config = /home/mark/p/scripts/pithos-control pause
+end
+
+begin
+    button = KEY_STOP
+    prog = irexec
+    config = /home/mark/p/scripts/pithos-control pause
+end
+
+# FWD & F.FWD
+begin
+    button = KEY_FASTFORWARD
+    prog = irexec
+    config = /home/mark/p/scripts/pithos-control skip
+end
+begin
+    button = KEY_NEXTSONG
+    prog = irexec
+    config = /home/mark/p/scripts/pithos-control skip
+end
+
+begin
+    button = KEY_SLEEP
+    prog = irexec
+    config = /usr/bin/xset dpms force off  # blank monitor
+end
