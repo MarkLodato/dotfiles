@@ -10,10 +10,12 @@
 
 # Top-level files and directories that I don't care about.
 /.ICEauthority
-/.Xauthority
+/.Xauthority*
 /.adobe
 /.android
 /.appcfg_nag
+/.apport-ignore.xml
+/.aspell.*
 /.aptitude
 /.bash_history
 /.cache
@@ -23,8 +25,10 @@
 /.dbus
 /.dmrc
 /.eclipse
+/.fontconfig
 /.gegl-0.0
-/.gimp-2.6
+/.gem
+/.gimp-?.?
 /.gitignore.swp
 /.gitk
 /.gksu.lock
@@ -36,16 +40,20 @@
 /.gstreamer-0.10
 /.gtk-bookmarks
 /.gvfs
+/.history
 /.irssi
 /.kde
 /.lesshst
 /.local
+/.linuxmint/mintMenu
 /.macromedia
 /.mcoprc
 /.mission-control
 /.news_time
 /.nv
 /.nvidia-settings-rc
+/.pam_environment
+/.pip
 /.pki
 /.psi
 /.pulse
@@ -55,11 +63,16 @@
 /.selected_editor
 /.sqlite_history
 /.ssl_vpn_request.yml
+/.steam
+/.steampath
+/.steampid
 /.swp
 /.swt
 /.thumbnails
 /.viminfo
+/.wavemonrc
 /.wireshark
+/.xsel.log
 /.xsession-errors
 /.xsession-errors.old
 /.ycm_extra_conf.py
@@ -67,21 +80,42 @@
 /.zcompdumps
 /.zhistfile
 
+# Saved games or other big directories not appropriate for dotfiles.git
+/.PlayOnLinux
+/.VirtualBox
+/.crawl
+/.dosbox
+/.scummvmrc
+/.t-engine
+/.wine
+/.vvvvvv
+
 # No longer needed.
 /.mozilla
 
 # Top-level directories that might contain some useful configuration, but I am
 # just too lazy to try to extract the important bits from all the cruft.
 /.gconf
+/.mateconf
+/.mateconfd
 /.matplotlib
 /.qalculate
 /.xchat2
 
+# Sensitive files and directories that should never be checked in.
+/.TrueCrypt
+/.gnupg
+/.lastpass
+/.netrw
+/.nzbget
+
 # Ignore temp / cache files and directories.
 /.curl/cookies
 /.nx/temp
-/.zsh/cache
+/.scummvm/logs
 /.vim/.netrwhist
+/.vim/spell
+/.zsh/cache
 
 # Ignore vim bundles, which can be downloaded again.
 /.vim/bundle
@@ -100,6 +134,7 @@
 !/.config/user-dirs.*
 
 !/.config/ipython
+/.config/ipython/Crash_report_ipython.txt
 /.config/ipython/profile_default/db
 /.config/ipython/profile_default/history.sqlite
 /.config/ipython/profile_default/log
