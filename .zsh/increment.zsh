@@ -28,7 +28,11 @@ _increment-number() {
   if [[ -n $begin ]]; then
     local orig=${BUFFER[begin,end]}
     local new=$(( orig + ${NUMERIC:-1} ))
-    if [[ $orig == 0* ]]; then
+    if (( $new < 0 )); then
+      # Don't go negative.  We do not read negative numbers because we often
+      # have, for example, 'foo-001.png', in which case we would not want to
+      # treat "001" as negative.
+    elif [[ $orig == 0* ]]; then
       # Preserve leading zeros.
       BUFFER[begin,end]=$(printf '%0*d' ${#orig} $new )
     else
