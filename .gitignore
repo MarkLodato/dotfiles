@@ -7,6 +7,7 @@
 .*.pyc
 .*.sw[a-z]
 .*.un~
+__pycache__
 
 # Top-level files and directories that I don't care about.
 /.ICEauthority
