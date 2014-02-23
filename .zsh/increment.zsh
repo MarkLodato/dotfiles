@@ -12,15 +12,29 @@
 _increment-number() {
   setopt LOCAL_OPTIONS EXTENDED_GLOB
   local -a match mbegin mend
-  if [[ $BUFFER[CURSOR+1] = [0-9] ]]; then
-    local left=$((CURSOR+1)) right=$((CURSOR+1))
-    [[ $LBUFFER = (*[^0-9]|)(#b)([0-9]##) ]] && left=$(( mbegin[1] ))
-    [[ $RBUFFER = (#b)([0-9]##)* ]] && right=$(( ${#LBUFFER} + mend[1] ))
-    BUFFER[left,right]=$(( BUFFER[left,right] + ${NUMERIC:-1} ))
-  elif [[ $RBUFFER = [^0-9]#(#b)([0-9]##)* ]]; then
-    RBUFFER[mbegin[1],mend[1]]=$(( match[1] + ${NUMERIC:-1} ))
-  elif [[ $LBUFFER = (*[^0-9]|)(#b)([0-9]##)[^0-9]# ]]; then
-    LBUFFER[mbegin[1],mend[1]]=$(( match[1] + ${NUMERIC:-1} ))
+  local begin end
+  if [[ $BUFFER[CURSOR+1] == [0-9] ]]; then
+    begin=$((CURSOR+1))
+    end=$((CURSOR+1))
+    [[ $LBUFFER == (*[^0-9]|)(#b)([0-9]##) ]] && begin=$(( mbegin[1] ))
+    [[ $RBUFFER == (#b)([0-9]##)* ]] && end=$(( ${#LBUFFER} + mend[1] ))
+  elif [[ $RBUFFER == [^0-9]#(#b)([0-9]##)* ]]; then
+    begin=$(( ${#LBUFFER} + mbegin[1] ))
+    end=$(( ${#LBUFFER} + mend[1] ))
+  elif [[ $LBUFFER == (*[^0-9]|)(#b)([0-9]##)[^0-9]# ]]; then
+    begin=$(( mbegin[1] ))
+    end=$(( mend[1] ))
+  fi
+  if [[ -n $begin ]]; then
+    local orig=${BUFFER[begin,end]}
+    local new=$(( orig + ${NUMERIC:-1} ))
+    if [[ $orig == 0* ]]; then
+      # Preserve leading zeros.
+      BUFFER[begin,end]=$(printf '%0*d' ${#orig} $new )
+    else
+      # Do not preserve leading zeros if none were present originally.
+      BUFFER[begin,end]=$new
+    fi
   fi
 }
 zle -N increment-number _increment-number
