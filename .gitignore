@@ -147,6 +147,10 @@ __pycache__
 
 !/.config/git
 
+!/.config/xfce4
+/.config/xfce4/*
+!/.config/xfce4/terminal
+
 # Even though ~/local/bin are not dotfiles, I usually want them whenever I want
 # dotfiles.
 !/local
