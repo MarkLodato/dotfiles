@@ -184,6 +184,7 @@ command! BigWindow call BigWindow()
 let python_highlight_numbers = 1
 let python_highlight_builtins = 1
 let python_highlight_exceptions = 1
+let c_gnu=1
 
 " Useful functions
 function! ReverseLineOrder() range
