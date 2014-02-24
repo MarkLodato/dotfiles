@@ -2,7 +2,7 @@
 ColorBackground=#000000002929
 ColorBold=#c6c6e2e2ffff
 ColorBoldUseDefault=FALSE
-ColorCursor=#b3b3b3b3b3b3
+ColorCursor=
 ColorForeground=#9f9fb6b6cdcd
 ColorSelection=#16163b3b5959
 FontAllowBold=FALSE
