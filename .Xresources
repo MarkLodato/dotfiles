@@ -1,5 +1,21 @@
-*VT100*utf8:			1
-*VT100*eightBitInput:		false
-*VT100*eightBitControl:		false
-*VT100*eightBitOutput:		true
-*VT100*underLine:		true
+XTerm*background:       #000029
+XTerm*foreground:       slategray3
+XTerm*boldMode:         off
+XTerm*colorBD:          slategray1
+XTerm*colorBDMode:      on
+XTerm*font:             -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
+XTerm*boldFont:         -*-fixed-medium-r-*-*-13-*-*-*-*-60-iso10646-1
+XTerm*saveLines:        10000
+XTerm*metaSendsEscape:  true
+XTerm*termName:         xterm-256color
+XTerm*locale:           true
+XTerm*scrollBar:        false
+XTerm*pointerMode:      1
+
+Rxvt*background:        #000029
+Rxvt*foreground:        slategray3
+Rxvt*scrollBar:         off
+Rxvt*font:              fixed
+Rxvt*boldFont:          fixed
+Rxvt*colorBD:           slategray1
+Rxvt*saveLines:         10000
