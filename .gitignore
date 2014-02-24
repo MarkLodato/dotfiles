@@ -96,7 +96,6 @@ __pycache__
 
 # Top-level directories that might contain some useful configuration, but I am
 # just too lazy to try to extract the important bits from all the cruft.
-/.gconf
 /.mateconf
 /.mateconfd
 /.matplotlib
@@ -109,6 +108,10 @@ __pycache__
 /.lastpass
 /.netrw
 /.nzbget
+
+# We only care about some things in gconf.
+/.gconf
+!/.gconf/apps/gnome-terminal
 
 # Ignore temp / cache files and directories.
 /.curl/cookies
