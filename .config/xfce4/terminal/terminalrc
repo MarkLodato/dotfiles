@@ -1,9 +1,9 @@
 [Configuration]
 ColorBackground=#000000002929
-ColorBold=#c6c6e2e2ffff
+ColorBold=#ffffffffffff
 ColorBoldUseDefault=FALSE
 ColorCursor=
-ColorForeground=#9f9fb6b6cdcd
+ColorForeground=#aaaaaaaaaaaa
 ColorSelection=#16163b3b5959
 FontAllowBold=FALSE
 FontName=Fixed Medium Semi-Condensed 10
