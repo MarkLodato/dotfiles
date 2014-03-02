@@ -197,6 +197,12 @@ zle -N increment-number
 bindkey '^X^A' increment-number
 bindkey -s '^X^X' '^[-^X^A'
 
+# Cycle quoting on the current word with ALT-'.
+autoload -U cycle-quotes  # in .zsh/functions/
+zle -N cycle-quotes
+bindkey "^['" cycle-quotes
+bindkey "\\M-'" cycle-quotes
+
 # Make ^V display a "^" while it is waiting for the next key, like vi does.
 bindkey '^V' vi-quoted-insert
 
