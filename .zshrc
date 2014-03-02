@@ -192,7 +192,8 @@ bindkey '\M-p' history-beginning-search-backward
 bindkey '\M-n' history-beginning-search-forward
 
 # Increment/decrement numbers with ^X^A / ^X^X, similar to Vim.
-source ~/.zsh/increment.zsh
+autoload -U increment-number  # in .zsh/functions/
+zle -N increment-number
 bindkey '^X^A' increment-number
 bindkey -s '^X^X' '^[-^X^A'
 
