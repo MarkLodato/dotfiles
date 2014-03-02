@@ -109,6 +109,8 @@ alias yesno='[[ $? -eq 0 ]] && echo yes || echo no'
 function swhich { whence -pcs $* | sed -e 's/.* -> //' }
 alias switch=swhich
 
+function mkcd { mkdir "$@" && cd "$@" }
+
 # Keep the dotfiles in a git repository.  We can't keep the git repo at ~/.git,
 # because then git will think we're *always* in a git repository.  So, we
 # instead put the repository on NFS and use this "gd" alias to manage dotfiles.
