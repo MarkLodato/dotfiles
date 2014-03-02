@@ -10,7 +10,7 @@
 #   bindkey -s '^X^X' '^[-^X^A'
 #
 # TODO: Should I also move the cursor like Vim?
-setopt LOCAL_OPTIONS EXTENDED_GLOB
+setopt LOCAL_OPTIONS EXTENDED_GLOB NO_KSH_ARRAYS
 local -a match mbegin mend
 local begin end
 if [[ $BUFFER[CURSOR+1] == [0-9] ]]; then
