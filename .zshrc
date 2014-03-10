@@ -112,6 +112,21 @@ alias switch=swhich
 # `mkcd` does `mkdir` followed by `cd`.
 function mkcd { mkdir "$@" && cd "$@" }
 
+# `cda` resolves all symlinks in the current directory.
+# `cda <dir>` changes to <dir> and then does `cda`.
+function cda {
+  if [[ $# -gt 1 ]]; then
+    echo "USAGE: $0 [directory]" >&2
+    return
+  fi
+  local orig="$1"
+  [[ -z $orig ]] && orig="$PWD"
+  local final="$(readlink -f "$orig")"
+  local rc=$?
+  [[ $rc -ne 0 ]] && return $rc
+  cd $final || return $rc
+}
+
 # Keep the dotfiles in a git repository.  We can't keep the git repo at ~/.git,
 # because then git will think we're *always* in a git repository.  So, we
 # instead put the repository on NFS and use this "gd" alias to manage dotfiles.
