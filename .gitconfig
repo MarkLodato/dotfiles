@@ -1,8 +1,6 @@
 [user]
 	name = Mark Lodato
 	email = lodato@google.com
-[color]
-	ui = auto
 [alias]
 	diffc = diff --cached
 	diffw = diff --color-words
