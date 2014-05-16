@@ -19,6 +19,7 @@
 	tag-sorted = !git tag | xargs -IT git log -n1 --format=%at-T T | sort -rnk1 | cut -d- -f2-
 	ack = -c color.grep.filename=6 grep --break --heading
 	mergef = merge --ff-only
+	pullf = pull --ff-only
 	lint = !git5 lint
 	locate = !sh -c 'cd \"$GIT_PREFIX\" && git ls-files \"$(git rev-parse --show-cdup)\" | ([ "$#" -eq 0 ] && cat || grep --color=auto \"$@\")' -
 	diff5 = !cd $GIT_PREFIX && git diff $(git5 status --base)
