@@ -60,7 +60,7 @@ hi type         guifg=#60ff60   ctermfg=green       gui=none cterm=none
 hi Underlined   cterm=underline term=underline
 hi Ignore       guifg=bg        ctermfg=bg
 
-hi Pmenu        guifg=#c0c0c0                       guibg=#404080
-hi PmenuSel     guifg=#c0c0c0                       guibg=#2050d0
-hi PmenuSbar    guifg=blue                          guibg=darkgray
-hi PmenuThumb   guifg=#c0c0c0
+hi Pmenu        guifg=#c0c0c0   ctermfg=145         guibg=#404080   ctermbg=60
+hi PmenuSel     guifg=#c0c0c0   ctermfg=145         guibg=#2050d0   ctermbg=26
+hi PmenuSbar    guifg=blue      ctermfg=blue        guibg=darkgray  ctermbg=darkgray
+hi PmenuThumb   guifg=#c0c0c0   ctermfg=145
