@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'VisIncr'
 Bundle 'a.vim'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'gerw/vim-HiLinkTrace'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
@@ -205,6 +206,25 @@ vmap <C-x> :I -1<CR>
 " html.vim
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+
+" gitgutter.vim
+" Sadly, guttern styles use the Normal bg instead of the SignColumn bg, so we
+" have to set the bg explicitly here.
+hi GitGutterAdd     guifg=green  ctermfg=green  guibg=#101050 ctermbg=238
+hi GitGutterChange  guifg=yellow ctermfg=yellow guibg=#101050 ctermbg=238
+hi GitGutterDelete  guifg=red    ctermfg=red    guibg=#101050 ctermbg=238
+hi GitGutterAddLine    guibg=#001040
+hi GitGutterChangeLine guibg=#101040
+hi GitGutterDeleteLine guibg=#100040
+let g:gitgutter_enabled = 0
+let g:gitgutter_escape_grep = 1
+let g:gitgutter_map_keys = 0
+let g:gitgutter_sign_column_always = 1
+nnoremap <Leader>gg :GitGutterToggle<CR>
+nnoremap <Leader>gl :GitGutterLineHighlightingEnable<CR>
+nnoremap <Leader>gn :GitGutterNextHunk<CR>
+nnoremap <Leader>gp :GitGutterPrevHunk<CR>
+nnoremap <Leader>gu :GitGutterAll<CR>
 
 " Allow % (matchit.vim) to work with merge conflict markers.
 " This is simplified from rhysd/conflict_marker.vim.
