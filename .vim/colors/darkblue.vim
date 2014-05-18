@@ -32,7 +32,6 @@ hi ModeMsg      guifg=#22cce2   ctermfg=lightblue
 hi MoreMsg                      ctermfg=darkgreen
 hi Question     guifg=green     ctermfg=green       gui=none cterm=none
 hi NonText      guifg=#0030ff   ctermfg=darkblue
-hi ColorColumn                                      guibg=#202050   ctermbg=238     term=none
 
 hi StatusLine   guifg=blue      ctermfg=black       guibg=darkgray  ctermbg=gray    gui=none cterm=none term=none
 hi StatusLineNC guifg=black     ctermfg=none        guibg=darkgray  ctermbg=240     gui=none cterm=none term=none
@@ -41,6 +40,9 @@ hi VertSplit    guifg=black     ctermfg=black       guibg=darkgray  ctermbg=gray
 hi Folded       guifg=#808080   ctermfg=darkgrey    guibg=#000040   ctermbg=black   cterm=bold term=bold
 hi FoldColumn   guifg=#808080   ctermfg=darkgrey    guibg=#000040   ctermbg=black   cterm=bold term=bold
 hi LineNr       guifg=#90f020   ctermfg=green                                       cterm=none
+hi SignColumn   guifg=#90f020   ctermfg=green       guibg=#202050   ctermbg=238     term=none
+hi ColorColumn                                      guibg=#202050   ctermbg=238     term=none
+
 
 hi DiffAdd                                          guibg=darkblue  ctermbg=darkblue term=none cterm=none
 hi DiffChange                                       guibg=darkmagenta ctermbg=magenta cterm=none
