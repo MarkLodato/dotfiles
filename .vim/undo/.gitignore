@@ -1,0 +1,4 @@
+# This directory must exist for vim's undodir/undofile options to work, but we
+# don't want to track any of the files in git.
+*
+!.gitignore
