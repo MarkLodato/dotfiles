@@ -226,7 +226,7 @@ let g:gitgutter_escape_grep = 1
 let g:gitgutter_map_keys = 0
 let g:gitgutter_sign_column_always = 1
 nnoremap <Leader>gg :GitGutterToggle<CR>
-nnoremap <Leader>gl :GitGutterLineHighlightingEnable<CR>
+nnoremap <Leader>gl :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>gn :GitGutterNextHunk<CR>
 nnoremap <Leader>gp :GitGutterPrevHunk<CR>
 nnoremap <Leader>gu :GitGutterAll<CR>
