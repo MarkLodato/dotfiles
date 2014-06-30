@@ -225,11 +225,15 @@ let g:gitgutter_enabled = 0
 let g:gitgutter_escape_grep = 1
 let g:gitgutter_map_keys = 0
 let g:gitgutter_sign_column_always = 1
+let g:gitgutter_diff_args = 'HEAD'
 nnoremap <Leader>gg :GitGutterToggle<CR>
 nnoremap <Leader>gl :GitGutterLineHighlightsToggle<CR>
 nnoremap <Leader>gn :GitGutterNextHunk<CR>
 nnoremap <Leader>gp :GitGutterPrevHunk<CR>
 nnoremap <Leader>gu :GitGutterAll<CR>
+" Toggle the diff base.
+nnoremap <Leader>gh :let g:gitgutter_diff_args='HEAD'<CR>
+nnoremap <Leader>gi :let g:gitgutter_diff_args=''<CR>
 
 " Allow % (matchit.vim) to work with merge conflict markers.
 " This is simplified from rhysd/conflict_marker.vim.
