@@ -40,7 +40,7 @@ hi VertSplit    guifg=black     ctermfg=black       guibg=darkgray  ctermbg=gray
 hi Folded       guifg=#808080   ctermfg=darkgrey    guibg=#000040   ctermbg=black   cterm=bold term=bold
 hi FoldColumn   guifg=#808080   ctermfg=darkgrey    guibg=#000040   ctermbg=black   cterm=bold term=bold
 hi LineNr       guifg=#90f020   ctermfg=green                                       cterm=none
-hi SignColumn   guifg=#90f020   ctermfg=green       guibg=#202050   ctermbg=238     term=none
+hi SignColumn   guifg=#90f020   ctermfg=green       guibg=#000030   ctermbg=238     term=none
 hi ColorColumn                                      guibg=#202050   ctermbg=238     term=none
 
 
