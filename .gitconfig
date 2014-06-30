@@ -49,5 +49,4 @@
 [credential]
 	helper = gnome-keyring
 [recent-branches]
-	since = 5 months ago
 	ignore = ^junk/
