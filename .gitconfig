@@ -39,8 +39,6 @@
 	defaultToUpstream = true
 [rebase]
 	autosquash = true
-[init]
-	templatedir = ~/.git_templates
 [diff]
 	tool = meld
 	mnemonicprefix = true
