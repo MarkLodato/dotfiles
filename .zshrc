@@ -109,6 +109,17 @@ alias yesno='[[ $? -eq 0 ]] && echo yes || echo no'
 function swhich { whence -pcs $* | sed -e 's/.* -> //' }
 alias switch=swhich
 
+# `pager_if_tty` runs `$PAGER` if stdout is a tty, else `cat`.  To be used
+# by functions that automatically spawn a pager.  With this, such functions
+# can still be piped without problem.
+function pager_if_tty {
+  if [[ -t 1 ]]; then
+    "${PAGER:-less}"
+  else
+    cat
+  fi
+}
+
 # `mkcd` does `mkdir` followed by `cd`.
 function mkcd { mkdir "$@" && cd "$@" }
 
