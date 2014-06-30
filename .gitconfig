@@ -20,9 +20,7 @@
 	ack = -c color.grep.filename=6 grep --break --heading
 	mergef = merge --ff-only
 	pullf = pull --ff-only
-	lint = !git5 lint
 	locate = !sh -c 'cd \"$GIT_PREFIX\" && git ls-files \"$(git rev-parse --show-cdup)\" | ([ "$#" -eq 0 ] && cat || grep --color=auto \"$@\")' -
-	diff5 = !cd $GIT_PREFIX && git diff $(git5 status --base)
 	b = recent-branches
 	lb = !bash -c 'f() { git log --graph --decorate --oneline --date-order \"$@\" \"$(git merge-base --octopus \"$@\")^!\" ";" } ";" f \"${1-HEAD}\" \"${2-upstream}\" \"${@:3}\"' -
 [interactive]
