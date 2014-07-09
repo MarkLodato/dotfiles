@@ -120,6 +120,11 @@ function pager_if_tty {
   fi
 }
 
+# `sum` prints the sum of the numbers in the first column.
+function sum {
+  awk '{ sum += $1 } END { print sum }' "$@"
+}
+
 # `mkcd` does `mkdir` followed by `cd`.
 function mkcd { mkdir "$@" && cd "$@" }
 
