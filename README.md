@@ -102,4 +102,4 @@ From then on, update it using:
     $ git fetch pointless-xcompose
     $ git subtree pull --squash --prefix=.pointless-xcompose pointless-xcompose master
 
-[pointless-xcompose]: https://github.com/rrthomas/pointless-xcompose.git
+[pointless-xcompose]: https://github.com/rrthomas/pointless-xcompose
