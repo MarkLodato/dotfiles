@@ -88,3 +88,18 @@ position when <kbd>^X ^A</kbd> is pressed.
                   ^
     $ cp foo.001 foo.001 dir        ->      $ cp foo.002 foo.001 dir
           ^
+
+## XCompose
+
+I am using [pointless-xcompose][] for the compose key.  It is included in the
+.pointless-xcompose/ directory using `git subtree`.  To update it, first add
+it as a remote:
+
+    $ git remote add pointless-xcompose https://github.com/rrthomas/pointless-xcompose.git
+
+From then on, update it using:
+
+    $ git fetch pointless-xcompose
+    $ git subtree pull --squash --prefix=.pointless-xcompose pointless-xcompose master
+
+[pointless-xcompose]: https://github.com/rrthomas/pointless-xcompose.git
