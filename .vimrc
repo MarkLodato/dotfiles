@@ -2,31 +2,33 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+call vundle#begin()
+Plugin 'gmarik/vundle'
 
 " Bundles
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'VisIncr'
-Bundle 'a.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'gerw/vim-HiLinkTrace'
-Bundle 'othree/html5.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-characterize'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-liquid'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-rsi'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'VisIncr'
+Plugin 'a.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'gerw/vim-HiLinkTrace'
+Plugin 'othree/html5.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-characterize'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-liquid'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
 " Consider installing conque (which i don't think is Vundle-compatible)
 
 " Bundles that are nice but that I don't need anymore:
-"Bundle 'scrooloose/nerdcommenter'  " vim-commentary is good enough
+"Plugin 'scrooloose/nerdcommenter'  " vim-commentary is good enough
+
+call vundle#end()
 
 " General options
 set autoindent
