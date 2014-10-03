@@ -9,6 +9,9 @@
 .*.un~
 __pycache__
 
+# Ignore the gitdir of this repo.
+/.dotfiles/gitdir
+
 # Top-level files and directories that I don't care about.
 /.ICEauthority
 /.Xauthority*

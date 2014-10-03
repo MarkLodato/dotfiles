@@ -145,16 +145,9 @@ function cda {
 
 # Keep the dotfiles in a git repository.  We can't keep the git repo at ~/.git,
 # because then git will think we're *always* in a git repository.  So, we
-# instead put the repository on NFS and use this "gd" alias to manage dotfiles.
-# We could use symlinks intead, but this seems easier.
-if [[ -z $HOME_GITDIR ]]; then
-  for HOME_GITDIR in ~/p/dotfiles.git ~/personal/dotfiles.git \
-                     ~/dotfiles.git; do
-    if [[ -d $HOME_GITDIR ]]; then
-      break
-    fi
-  done
-fi
+# instead put the git directory in a different location and use this "gd"
+# alias to manage dotfiles.
+HOME_GITDIR="$HOME/.dotfiles/gitdir"
 alias gd='git --git-dir="$HOME_GITDIR" --work-tree="$HOME"'
 
 
