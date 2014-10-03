@@ -155,7 +155,7 @@ if [[ -z $HOME_GITDIR ]]; then
     fi
   done
 fi
-alias gd='git --git-dir=$HOME_GITDIR --work-tree=$HOME'
+alias gd='git --git-dir="$HOME_GITDIR" --work-tree="$HOME"'
 
 
 # ----------------------------------------------------------------------------

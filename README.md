@@ -12,7 +12,7 @@ need to jump through the following hoops:
     $ git clone -n https://github.com/MarkLodato/dotfiles.git dotfiles.tmp
     $ mv dotfiles.tmp/.git dotfiles.git
     $ rmdir dotfiles.tmp
-    $ alias gd='git --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
+    $ alias gd='git --git-dir="$HOME/dotfiles.git" --work-tree="$HOME"'
     $ gd checkout ~
 
 Explanation: First, we check out the repository and move the .git directory to
