@@ -81,6 +81,10 @@ alias mcp='noglob zmv -WC'
 # zargs is like xargs, but you can use globbing
 autoload zargs
 
+# Make ALT-H work with git.
+autoload -U run-help
+autoload -U run-help-git
+
 if ls --help | grep -q -e --color; then
   alias ls='ls --color=auto'
 fi
