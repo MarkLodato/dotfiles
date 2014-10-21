@@ -129,6 +129,21 @@ function sum {
   awk '{ sum += $1 } END { print sum }' "$@"
 }
 
+# `joinlines` joins all of the lines of stdin with the given string.
+function joinlines {
+  [[ $# -ne 1 ]] && { echo "USAGE: joinlines SEP" >&2; return 1 }
+  local sep line
+  # The test allows us to read the last line if it does not end in a newline.
+  while read -r line || [[ -n $line ]]; do
+    # If I ever feel like parsing options:
+    # [[ $ignore_blanks -eq 0 && -z $line ]] && continue
+    printf '%s%s' "$sep" "$line"
+    # Do not print the separator before the first element.
+    sep="$1"
+  done
+  printf '\n'
+}
+
 # `mkcd` does `mkdir` followed by `cd`.
 function mkcd { mkdir "$@" && cd "$@" }
 
