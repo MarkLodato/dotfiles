@@ -144,6 +144,22 @@ function joinlines {
   printf '\n'
 }
 
+# C-escape the positional arguments, printing the results one per line.
+# If no arguments are given, C-escape standard input.
+function c_escape {
+  local script='s/([\\"'\''])/\\\1/g; s/\n/\\n/g'
+  if [[ $# -eq 0 ]]; then
+    perl -pe "$script"
+    echo
+  else
+    while [[ $# -gt 0 ]]; do
+      echo -n "$1" | perl -pe "$script"
+      echo
+      shift
+    done
+  fi
+}
+
 # `mkcd` does `mkdir` followed by `cd`.
 function mkcd { mkdir "$@" && cd "$@" }
 
