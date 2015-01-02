@@ -8,6 +8,14 @@ c.TerminalInteractiveShell.term_title = True
 c.TerminalIPythonApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['autoreload 1']
 
+# Undo IPython's annoying remapping of the cursor keys.
+c.TerminalInteractiveShell.readline_parse_and_bind = [
+    '"\Cp": previous-history',
+    '"\Cn": next-history',
+    '"\e[A": previous-history',
+    '"\e[B": next-history',
+]
+
 # Make the IPython prompt look like the regular Python one.
 c.PromptManager.in_template = '>>> '
 c.PromptManager.in2_template = '... '
