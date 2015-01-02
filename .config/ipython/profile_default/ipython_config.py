@@ -8,12 +8,11 @@ c.TerminalInteractiveShell.term_title = True
 c.TerminalIPythonApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['autoreload 1']
 
-# Undo IPython's annoying remapping of the cursor keys.
+# IPython's default readline config remaps the cursor keys to do history
+# searches, which is extremely annoying.  By setting this here, we prevent *all*
+# of the default mappings, the only of which we care about is tab completion.
 c.TerminalInteractiveShell.readline_parse_and_bind = [
-    '"\Cp": previous-history',
-    '"\Cn": next-history',
-    '"\e[A": previous-history',
-    '"\e[B": next-history',
+    'tab: complete',
 ]
 
 # Make the IPython prompt look like the regular Python one.
