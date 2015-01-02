@@ -68,7 +68,7 @@ set undofile
 set viminfo='100,<500,s10,h
 set wildmenu
 set winaltkeys=no
-set textwidth=78
+set textwidth=80
 set cinoptions+=g0(0t0p0
 
 syntax on
