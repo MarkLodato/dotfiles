@@ -1,2 +1,3 @@
 # Write your default config options here!
 ao=alsa
+osdlevel=3
