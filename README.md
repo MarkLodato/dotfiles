@@ -9,15 +9,14 @@ think *everything* in the home directory is part of this repo.  Instead, we
 need to jump through the following hoops:
 
     $ cd
-    $ mkdir .dotfiles
     $ git clone -n https://github.com/MarkLodato/dotfiles.git dotfiles.tmp
-    $ mv dotfiles.tmp/.git .dotfiles/gitdir
+    $ mv dotfiles.tmp/.git .dotfiles.git
     $ rmdir dotfiles.tmp
-    $ alias gd='git --git-dir="$HOME/dotfiles/gitdir" --work-tree="$HOME"'
+    $ alias gd='git --git-dir="$HOME/dotfiles.git" --work-tree="$HOME"'
     $ gd checkout ~
 
 Explanation: First, we check out the repository and move the .git directory to
-~/dotfiles.git.  (We do not use `git clone --bare` because that would tell git
+~/.dotfiles.git.  (We do not use `git clone --bare` because that would tell git
 that it is a "bare" repository without a working directory, which is not true.)
 Then, we set up an alias, `gd`, to tell git where our git directory is.  This is
 exactly what .zshrc does.  The final step is to update $HOME with the files from

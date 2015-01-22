@@ -182,7 +182,7 @@ function cda {
 # because then git will think we're *always* in a git repository.  So, we
 # instead put the git directory in a different location and use this "gd"
 # alias to manage dotfiles.
-HOME_GITDIR="$HOME/.dotfiles/gitdir"
+HOME_GITDIR="$HOME/.dotfiles.git"
 alias gd='git --git-dir="$HOME_GITDIR" --work-tree="$HOME"'
 
 
