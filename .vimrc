@@ -183,10 +183,16 @@ nmap <Leader>ss <Leader>sip
 vnoremap <Leader>s :sort<CR>
 
 " Create the window that I like
+let g:big_window_gitgutter=1
 function! BigWindow()
   top vsplit
-  set columns=161
   set lines=90
+  if g:big_window_gitgutter
+    set columns=165
+    GitGutterEnable
+  else
+    set columns=161
+  endif
   execute "normal \<C-w>="
 endfunction
 command! BigWindow call BigWindow()
