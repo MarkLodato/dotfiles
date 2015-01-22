@@ -6,6 +6,7 @@
 # we need to re-ignore them here because the !/.* above un-ignores them.
 .*.pyc
 .*.sw[a-z]
+.sw[a-z]
 .*.un~
 __pycache__
 
