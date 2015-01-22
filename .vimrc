@@ -96,9 +96,9 @@ endif
 runtime ftplugin/man.vim
 runtime macros/matchit.vim
 
-" Restore cursor position when opening a file
+" Restore cursor position when opening a file, except for git commit messages.
 function! ResCur()
-  if line("'\"") <= line("$")
+  if line("'\"") <= line("$") && &filetype != "gitcommit"
     normal! g`"
     return 1
   endif
