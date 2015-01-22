@@ -15,6 +15,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'othree/html5.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'vim-jp/cpp-vim'
+Plugin 'thinca/vim-visualstar'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-characterize'
 Plugin 'tpope/vim-commentary'
@@ -214,6 +215,16 @@ vmap <C-x> :I -1<CR>
 " html.vim
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+
+" vim-visualstar
+" Do not map S-LeftMouse, which affects highlighting in visual mode.
+let g:visualstar_no_default_key_mappings = 1
+silent! xmap <unique> * <Plug>(visualstar-*)
+silent! xmap <unique> <kMultiply> <Plug>(visualstar-*)
+silent! xmap <unique> # <Plug>(visualstar-#)
+silent! xmap <unique> g* <Plug>(visualstar-g*)
+silent! xmap <unique> g<kMultiply> <Plug>(visualstar-g*)
+silent! xmap <unique> g# <Plug>(visualstar-g#)
 
 " gitgutter.vim
 " The default styles link to diff styles, which are too bright for me.
