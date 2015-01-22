@@ -19,6 +19,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-characterize'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-liquid'
 "Plugin 'tpope/vim-markdown'
 Plugin 'MarkLodato/vim-markdown'  " until tpope pulls the changes
