@@ -20,8 +20,8 @@ __pycache__
 /.android
 /.appcfg_nag
 /.apport-ignore.xml
-/.aspell.*
 /.aptitude
+/.aspell.*
 /.bash_history
 /.cache
 /.compiz
@@ -49,8 +49,8 @@ __pycache__
 /.irssi
 /.kde
 /.lesshst
-/.local
 /.linuxmint/mintMenu
+/.local
 /.macromedia
 /.mcoprc
 /.mission-control
