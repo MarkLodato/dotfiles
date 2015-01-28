@@ -1,39 +1,41 @@
 " Vundle - all of the following is required
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
-Plugin 'gmarik/vundle'
+if isdirectory(expand("~/.vim/bundle/vundle/"))
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#begin()
+  Plugin 'gmarik/vundle'
 
-" Bundles
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'VisIncr'
-Plugin 'a.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'gerw/vim-HiLinkTrace'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'othree/html5.vim'
-Plugin 'sjl/gundo.vim'
-Plugin 'vim-jp/cpp-vim'
-Plugin 'thinca/vim-visualstar'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-characterize'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-liquid'
-"Plugin 'tpope/vim-markdown'
-Plugin 'MarkLodato/vim-markdown'  " until tpope pulls the changes
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-rsi'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-" Consider installing conque (which i don't think is Vundle-compatible)
+  " Bundles
+  Plugin 'Lokaltog/vim-easymotion'
+  Plugin 'VisIncr'
+  Plugin 'a.vim'
+  Plugin 'airblade/vim-gitgutter'
+  Plugin 'gerw/vim-HiLinkTrace'
+  Plugin 'hynek/vim-python-pep8-indent'
+  Plugin 'othree/html5.vim'
+  Plugin 'sjl/gundo.vim'
+  Plugin 'vim-jp/cpp-vim'
+  Plugin 'thinca/vim-visualstar'
+  Plugin 'tpope/vim-abolish'
+  Plugin 'tpope/vim-characterize'
+  Plugin 'tpope/vim-commentary'
+  Plugin 'tpope/vim-fugitive'
+  Plugin 'tpope/vim-git'
+  Plugin 'tpope/vim-liquid'
+  "Plugin 'tpope/vim-markdown'
+  Plugin 'MarkLodato/vim-markdown'  " until tpope pulls the changes
+  Plugin 'tpope/vim-repeat'
+  Plugin 'tpope/vim-rsi'
+  Plugin 'tpope/vim-surround'
+  Plugin 'tpope/vim-unimpaired'
+  " Consider installing conque (which i don't think is Vundle-compatible)
 
-" Bundles that are nice but that I don't need anymore:
-"Plugin 'scrooloose/nerdcommenter'  " vim-commentary is good enough
+  " Bundles that are nice but that I don't need anymore:
+  "Plugin 'scrooloose/nerdcommenter'  " vim-commentary is good enough
 
-call vundle#end()
+  call vundle#end()
+endif  " vundle directory exists
 
 " General options
 set autoindent
