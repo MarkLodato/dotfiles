@@ -22,9 +22,11 @@ fi
 # If we are SSHing in, set up D-Bus to use the instance that was started up
 # during the graphical login (display :0 which is where the "-0" comes from).
 if [[ -z $DBUS_SESSION_BUS_ADDRESS ]]; then
-  if [[ -f ~/.dbus/session-bus/$(dbus-uuidgen --get)-0 ]]; then
-    source ~/.dbus/session-bus/$(dbus-uuidgen --get)-0
-    export DBUS_SESSION_BUS_ADDRESS
+  if which dbus-uuidgen > /dev/null; then
+    if [[ -f ~/.dbus/session-bus/$(dbus-uuidgen --get)-0 ]]; then
+      source ~/.dbus/session-bus/$(dbus-uuidgen --get)-0
+      export DBUS_SESSION_BUS_ADDRESS
+    fi
   fi
 fi
 
