@@ -87,13 +87,15 @@ autoload zargs
 autoload -U run-help
 autoload -U run-help-git
 
-if ls --help | grep -q -e --color; then
-  alias ls='ls --color=auto'
+if ls --color=auto -d / &>/dev/null; then
+  alias ls='ls --color=auto'  # GNU coreutils
+else
+  alias ls='ls -G'  # BSD / Mac OS X
 fi
 alias lsa='ls -A'
 alias ll='ls -lh'
 alias lla='ls -la'
-if grep --help | grep -q -e --color; then
+if grep --color=auto x /dev/null &>/dev/null; then
   alias grep='grep --color=auto'
 fi
 alias rm='rm -i'
