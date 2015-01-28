@@ -14,6 +14,7 @@ need to jump through the following hoops:
     $ rmdir dotfiles.tmp
     $ alias gd='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
     $ gd checkout ~
+    $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 
 Explanation: First, we check out the repository and move the .git directory to
 ~/.dotfiles.git.  (We do not use `git clone --bare` because that would tell git
