@@ -81,6 +81,7 @@ more += distant snort
 more += Found a gateway leading out of the Abyss
 more += Found .* abyssal rune of Zot
 more += terrible weight on your shoulders
+more += The mighty Pandemonium lord
 
 # Interrupts
 more += You don't.* that spell
@@ -136,6 +137,8 @@ more += shroud falls apart
 more += You start to feel a little slower
 more += Your skin feels tender
 more += Your extra speed is starting to run out
+more += You feel closer to the material plane
+more += You are firmly grounded in the material plane once more
 
 # Others
 more += You have reached level
