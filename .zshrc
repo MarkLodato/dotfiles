@@ -95,9 +95,6 @@ fi
 alias lsa='ls -A'
 alias ll='ls -lh'
 alias lla='ls -la'
-if grep --color=auto x /dev/null &>/dev/null; then
-  alias grep='grep --color=auto'
-fi
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
@@ -106,6 +103,8 @@ alias gdiff='git diff --no-index --no-prefix'
 alias gdiffw='git diff --no-index --no-prefix --color-words'
 alias ggrep='git grep --no-index'
 alias chrome='google-chrome'
+
+export GREP_OPTIONS='--color=auto'
 
 # `yesno` is useful for experimentally testing conditionals.
 # Example: [[ $x = *foo* ]]; yesno
