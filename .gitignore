@@ -112,6 +112,8 @@ __pycache__
 
 # Sensitive files and directories that should never be checked in.
 /.TrueCrypt
+/.appcfg_cookies
+/.appcfg_oauth2_tokens
 /.gnupg
 /.lastpass
 /.netrw
