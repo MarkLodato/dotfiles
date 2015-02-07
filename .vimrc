@@ -160,9 +160,9 @@ cnoremap <A-p> <Up>
 cnoremap <A-n> <Down>
 
 " Paste from clipboard (p) or X11 highlight (P).
-inoremap <C-\><C-p> <C-o>"+p
-inoremap <C-\>p <C-o>"+p
-inoremap <C-\>P <C-o>"*p
+inoremap <C-\><C-p> <C-o>"+P
+inoremap <C-\>p <C-o>"+P
+inoremap <C-\>P <C-o>"*P
 cnoremap <C-\><C-p> <C-r>+
 cnoremap <C-\>p <C-r>+
 cnoremap <C-\>P <C-r>*
