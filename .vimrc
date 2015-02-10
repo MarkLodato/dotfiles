@@ -159,20 +159,6 @@ map <Leader>m :make<cr>
 cnoremap <A-p> <Up>
 cnoremap <A-n> <Down>
 
-" Paste from clipboard (p) or X11 highlight (P).
-inoremap <C-\><C-p> <C-o>"+P
-inoremap <C-\>p <C-o>"+P
-inoremap <C-\>P <C-o>"*P
-cnoremap <C-\><C-p> <C-r>+
-cnoremap <C-\>p <C-r>+
-cnoremap <C-\>P <C-r>*
-nnoremap <C-\><C-p> "+p
-nnoremap <C-\>p "+p
-nnoremap <C-\>P "*p
-vnoremap <C-\><C-p> "+p
-vnoremap <C-\>p "+p
-vnoremap <C-\>P "*p
-
 " Emacs bindings
 inoremap <C-a> <Home>
 cnoremap <C-a> <Home>
