@@ -11,6 +11,7 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'VisIncr'
   Plugin 'a.vim'
   Plugin 'airblade/vim-gitgutter'
+  Plugin 'danro/rename.vim'
   Plugin 'gerw/vim-HiLinkTrace'
   Plugin 'hynek/vim-python-pep8-indent'
   Plugin 'othree/html5.vim'
