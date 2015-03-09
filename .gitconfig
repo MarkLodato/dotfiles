@@ -44,8 +44,6 @@
 [diff]
 	tool = meld
 	mnemonicprefix = true
-[help]
-	autocorrect = 10
 [clangFormat]
 	style = Google
 [push]
