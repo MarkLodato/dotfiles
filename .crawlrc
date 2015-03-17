@@ -32,6 +32,9 @@ spell_slot += Confuse:c
 spell_slot += Corona:n
 spell_slot += Ensorcelled hibernation:e
 spell_slot += Apportation:a
+spell_slot += Sting:z
+spell_slot += Venom bolt:v
+spell_slot += Olgreb's toxic radiance:t
 
 hp_warning = 50
 mp_warning = 25
@@ -139,6 +142,7 @@ more += Your skin feels tender
 more += Your extra speed is starting to run out
 more += You feel closer to the material plane
 more += You are firmly grounded in the material plane once more
+more += finished your manual
 
 # Others
 more += You have reached level
