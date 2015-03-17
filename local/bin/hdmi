@@ -1,0 +1,50 @@
+#!/bin/bash
+
+usage() {
+    echo >&2 "USAGE: $0 [audio|video|both] (on|off)"
+    exit 1
+}
+
+DVI_ON="DVI-I-1: 1680x1050 +0+0"
+HDMI_ON=", HDMI-0: nvidia-auto-select +0+0 { ViewPortIn=1680x1050, ViewPortOut=1824x1028+46+28}"
+HDMI_AUDIO="alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
+SB_AUDIO="alsa_output.pci-0000_04_02.0.analog-stereo"
+
+if (( $# < 1 || $# > 2 )); then
+    usage
+fi
+
+declare -i audio=1
+declare -i video=1
+if (( $# > 1 )); then
+    case "$1" in
+        audio) video=0 ;;
+        video) audio=0 ;;
+        both) ;;
+        *) usage ;;
+    esac
+    shift
+fi
+
+declare -i value
+case "$1" in
+    on|y|yes|1) value=1 ;;
+    off|n|no|0) value=0 ;;
+    *) usage ;;
+esac
+
+if (( $audio )); then
+    if (( $value == 1 )); then
+        pacmd set-default-sink "$HDMI_AUDIO"
+    else
+        pacmd set-default-sink "$SB_AUDIO"
+    fi
+fi
+
+if (( $video )); then
+    if (( $value == 1 )); then
+        nvidia-settings --assign CurrentMetaMode="$DVI_ON,$HDMI_ON"
+    else
+        nvidia-settings --assign CurrentMetaMode="$DVI_ON"
+    fi
+fi
