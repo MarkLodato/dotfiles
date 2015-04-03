@@ -1,5 +1,6 @@
 c = get_config()
 
+c.InteractiveShell.colors = 'Linux'  # Use dark background color scheme.
 c.TerminalIPythonApp.display_banner = False
 c.TerminalInteractiveShell.confirm_exit = False
 c.TerminalInteractiveShell.term_title = True
