@@ -35,9 +35,9 @@ esac
 
 if (( $audio )); then
     if (( $value == 1 )); then
-        pacmd set-default-sink "$HDMI_AUDIO"
+        pactl set-default-sink "$HDMI_AUDIO"
     else
-        pacmd set-default-sink "$SB_AUDIO"
+        pactl set-default-sink "$SB_AUDIO"
     fi
 fi
 
