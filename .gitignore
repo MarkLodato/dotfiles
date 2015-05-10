@@ -147,13 +147,12 @@ __pycache__
 
 !/.config/user-dirs.*
 
-!/.config/ipython
-/.config/ipython/Crash_report_ipython.txt
-/.config/ipython/profile_default/db
-/.config/ipython/profile_default/history.sqlite
-/.config/ipython/profile_default/log
-/.config/ipython/profile_default/pid
-/.config/ipython/profile_default/security
+/.ipython/Crash_report_ipython.txt
+/.ipython/profile_default/db
+/.ipython/profile_default/history.sqlite
+/.ipython/profile_default/log
+/.ipython/profile_default/pid
+/.ipython/profile_default/security
 
 !/.config/git
 
