@@ -1,4 +1,5 @@
 # Write your default config options here!
+af=scaletempo
 ao=alsa
 osdlevel=3
 softvol=true
