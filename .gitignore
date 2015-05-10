@@ -58,6 +58,8 @@ __pycache__
 /.news_time
 /.nv
 /.nvidia-settings-rc
+/.nviminfo
+/.nvimlog
 /.openshot
 /.pam_environment
 /.pip
