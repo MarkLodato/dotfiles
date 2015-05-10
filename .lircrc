@@ -1,14 +1,14 @@
 begin
     button = KEY_CHANNELUP
     prog = irexec
-    config = /usr/bin/pactl -- set-sink-volume 0 +2%  # vol+
+    config = /usr/bin/pactl -- set-sink-volume alsa_output.pci-0000_04_02.0.analog-stereo +2%  # vol+
     repeat = 1
 end
 
 begin
     button = KEY_CHANNELDOWN
     prog = irexec
-    config = /usr/bin/pactl -- set-sink-volume 0 -2%  # vol-
+    config = /usr/bin/pactl -- set-sink-volume alsa_output.pci-0000_04_02.0.analog-stereo -2%  # vol-
     repeat = 1
 end
 
