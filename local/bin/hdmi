@@ -1,12 +1,39 @@
 #!/bin/bash
 
 usage() {
-    echo >&2 "USAGE: $0 [audio|video|both] (on|off)"
+    cat >&2 <<EOF
+USAGE: $0 [audio|video|both] (on|off|normal|stretch|zoom|native)
+
+Arguments:
+    audio               only change audio
+    video               only change video
+    both (default)      change both audio and video
+
+    off                 turn off
+    on                  turn on, using default mode
+
+    normal              DVI: native / HDMI: black bars on sides
+    stretch (default)   DVI: native / HDMI: stretch horizontally
+    zoom                DVI: native / HDMI: cut off top and bottom
+    native              DVI: use HDMI resolution / HDMI: native
+EOF
     exit 1
 }
 
-DVI_ON="DVI-I-1: 1680x1050 +0+0"
-HDMI_ON=", HDMI-0: nvidia-auto-select +0+0 { ViewPortIn=1680x1050, ViewPortOut=1824x1028+46+28}"
+# Native resolution of each device:
+DVI_RESOLUTION="1680x1050"
+HDMI_RESOLUTION="1824x1028"
+
+# HDMI modes:
+HDMI_NATIVE="1824x1028+46+28"   # native resolution
+HDMI_NORMAL="1644x1028+136+28"  # black bars on sides
+HDMI_ZOOM="1824x1072+46+3"      # top and bottoms cut off
+
+# Video device names:
+DVI_DEV="DVI-I-1"
+HDMI_DEV="HDMI-0"
+
+# Audio devices:
 HDMI_AUDIO="alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1"
 SB_AUDIO="alsa_output.pci-0000_04_02.0.analog-stereo"
 
@@ -27,9 +54,11 @@ if (( $# > 1 )); then
 fi
 
 declare -i value
+mode=stretch
 case "$1" in
     on|y|yes|1) value=1 ;;
     off|n|no|0) value=0 ;;
+    normal|stretch|zoom|native) value=1 mode="$1" ;;
     *) usage ;;
 esac
 
@@ -41,10 +70,32 @@ if (( $audio )); then
     fi
 fi
 
-if (( $video )); then
-    if (( $value == 1 )); then
-        nvidia-settings --assign CurrentMetaMode="$DVI_ON,$HDMI_ON"
+nvidia_mode() {
+    if [[ $# == 3 ]]; then
+        echo "$1: nvidia-auto-select +0+0 { ViewPortIn=$2, ViewPortOut=$3 }"
     else
-        nvidia-settings --assign CurrentMetaMode="$DVI_ON"
+        echo "$1: $2"
     fi
+}
+
+dvi_mode() {
+    if [[ $mode == "native" ]]; then
+        nvidia_mode "$DVI_DEV" "$HDMI_RESOLUTION" "$DVI_RESOLUTION"
+    else
+        nvidia_mode "$DVI_DEV" "$DVI_RESOLUTION"
+    fi
+}
+
+hdmi_mode() {
+    case "$value,$mode" in
+        0,*)       ;;
+        1,normal)  nvidia_mode "$HDMI_DEV" "$DVI_RESOLUTION"  "$HDMI_NORMAL" ;;
+        1,stretch) nvidia_mode "$HDMI_DEV" "$DVI_RESOLUTION"  "$HDMI_NATIVE" ;;
+        1,zoom)    nvidia_mode "$HDMI_DEV" "$DVI_RESOLUTION"  "$HDMI_ZOOM"   ;;
+        1,native)  nvidia_mode "$HDMI_DEV" "$HDMI_RESOLUTION" "$HDMI_NATIVE" ;;
+    esac
+}
+
+if (( $video )); then
+    nvidia-settings --assign CurrentMetaMode="$(dvi_mode), $(hdmi_mode)"
 fi
