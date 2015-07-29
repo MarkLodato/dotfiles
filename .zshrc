@@ -223,6 +223,10 @@ bindkey '\e[F~' end-of-line
 bindkey '\e\e[C' end-of-line        # Cmd-Right
 bindkey '\e\e[D' beginning-of-line  # Cmd-Left
 
+# Make CTRL-U kill to the beginning of the line (like bash), rather than the
+# whole line.
+bindkey '^U' backward-kill-line
+
 # Add some vi commands to emacs mode
 #bindkey '^xf' vi-find-next-char
 #bindkey '^xF' vi-find-prev-char
