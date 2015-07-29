@@ -48,6 +48,7 @@ __pycache__
 /.gvfs
 /.history
 /.irssi
+/.java
 /.kde
 /.lesshst
 /.linuxmint/mintMenu
@@ -55,6 +56,7 @@ __pycache__
 /.macromedia
 /.mcoprc
 /.mission-control
+/.mozc
 /.news_time
 /.nv
 /.nvidia-settings-rc
@@ -78,11 +80,13 @@ __pycache__
 /.swp
 /.swt
 /.thumbnails
+/.tmp
 /.uim.d
 /.viminfo
 /.wavemonrc
 /.wireshark
 /.xinputrc
+/.xscreensaver
 /.xsel.log
 /.xsession-errors
 /.xsession-errors.old
