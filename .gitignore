@@ -32,6 +32,7 @@ __pycache__
 /.dmrc
 /.eclipse
 /.fontconfig
+/.gdb_history
 /.gegl-0.0
 /.gem
 /.gimp-?.?
