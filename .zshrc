@@ -541,6 +541,18 @@ precmd_functions+=precmd_title
 
 
 # ----------------------------------------------------------------------------
+#                               Google Cloud SDK
+# ----------------------------------------------------------------------------
+
+if [[ -r $HOME/p/google-cloud-sdk/completion.zsh.inc ]]; then
+  source $HOME/p/google-cloud-sdk/completion.zsh.inc
+fi
+if [[ -r $HOME/p/google-cloud-sdk/path.zsh.inc ]]; then
+  source $HOME/p/google-cloud-sdk/path.zsh.inc
+fi
+
+
+# ----------------------------------------------------------------------------
 #                     Machine-specific Configuration (end)
 # ----------------------------------------------------------------------------
 
