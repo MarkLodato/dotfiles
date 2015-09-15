@@ -30,6 +30,7 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'tpope/vim-rsi'
   Plugin 'tpope/vim-surround'
   Plugin 'tpope/vim-unimpaired'
+  Plugin 'vim-scripts/svg.vim'
   " Consider installing conque (which i don't think is Vundle-compatible)
 
   " Bundles that are nice but that I don't need anymore:
