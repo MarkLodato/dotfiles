@@ -14,6 +14,7 @@ __pycache__
 /.dotfiles.git
 
 # Top-level files and directories that I don't care about.
+/.Braid
 /.ICEauthority
 /.Xauthority*
 /.adobe
@@ -24,13 +25,16 @@ __pycache__
 /.aspell.*
 /.avidemux
 /.bash_history
+/.bzr.log
 /.cache
 /.compiz
 /.compiz-1
+/.composer
 /.cups
 /.dbus
 /.dmrc
 /.eclipse
+/.fltk
 /.fontconfig
 /.gdb_history
 /.gegl-0.0
@@ -57,6 +61,7 @@ __pycache__
 /.macromedia
 /.mcoprc
 /.mission-control
+/.mono
 /.mozc
 /.news_time
 /.nv
@@ -73,6 +78,7 @@ __pycache__
 /.qt
 /.rnd
 /.selected_editor
+/.speech-dispatcher
 /.sqlite_history
 /.ssl_vpn_request.yml
 /.steam
@@ -95,6 +101,7 @@ __pycache__
 /.zcompdump
 /.zcompdumps
 /.zhistfile
+/.zsnes
 
 # Saved games or other big directories not appropriate for dotfiles.git
 /.PlayOnLinux
