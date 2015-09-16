@@ -288,6 +288,9 @@ augroup ConflictMarkers
   autocmd BufReadPost * call s:add_conflict_markers_to_match_words()
 augroup END
 
+" Allow % to work with <>'s in C++.
+autocmd FileType cpp set matchpairs+=<:>
+
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
   source ~/.vim/rc-private.vim
