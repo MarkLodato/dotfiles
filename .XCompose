@@ -1,2 +1,6 @@
 include "%L"
 include "%H/.pointless-xcompose/xcompose"
+
+# Aliases that I can actually remember.
+<Multi_key> <e> <u> <r>                 : "€"           # EURO SYMBOL
+<Multi_key> <l> <b>                     : "£"           # POUND SYMBOL
