@@ -297,6 +297,6 @@ endif
 
 " EasyMotion:
 " Make "s<char><char>" find a 2-character sequence.
-map s <Plug>(easymotion-s2)
+map gs <Plug>(easymotion-s2)
 " Allow case-insensitive searches if the query is all lowercase.
 let g:EasyMotion_smartcase = 1
