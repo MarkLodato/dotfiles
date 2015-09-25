@@ -14,7 +14,6 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'danro/rename.vim'
   Plugin 'gerw/vim-HiLinkTrace'
   Plugin 'hynek/vim-python-pep8-indent'
-  Bundle 'justinmk/vim-sneak'
   Plugin 'othree/html5.vim'
   Plugin 'sjl/gundo.vim'
   Plugin 'vim-jp/cpp-vim'
@@ -296,20 +295,8 @@ if filereadable($HOME.'/.vim/rc-private.vim')
   source ~/.vim/rc-private.vim
 endif
 
-" sneak.vim
-let g:sneak#prompt = 'sneak> '
-let g:sneak#streak = 1
-"replace 'f' with 1-char Sneak
-nmap f <Plug>Sneak_f
-nmap F <Plug>Sneak_F
-xmap f <Plug>Sneak_f
-xmap F <Plug>Sneak_F
-omap f <Plug>Sneak_f
-omap F <Plug>Sneak_F
-"replace 't' with 1-char Sneak
-nmap t <Plug>Sneak_t
-nmap T <Plug>Sneak_T
-xmap t <Plug>Sneak_t
-xmap T <Plug>Sneak_T
-omap t <Plug>Sneak_t
-omap T <Plug>Sneak_T
+" EasyMotion:
+" Make "s<char><char>" find a 2-character sequence.
+map s <Plug>(easymotion-s2)
+" Allow case-insensitive searches if the query is all lowercase.
+let g:EasyMotion_smartcase = 1
