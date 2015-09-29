@@ -16,7 +16,7 @@ endif
 let colors_name = "darkblue"
 
 hi Normal       guifg=#c0c0c0   ctermfg=gray        guibg=#000040   ctermbg=black
-hi ErrorMsg     guifg=#ffffff   ctermfg=white       guibg=#287eff   ctermbg=lightblue
+hi ErrorMsg     guifg=#ffffff   ctermfg=white       guibg=#287eff   ctermbg=33
 hi Visual       guifg=#8080ff   ctermfg=lightblue   guibg=fg        ctermbg=fg        gui=reverse cterm=reverse
 hi VisualNOS    guifg=#8080ff   ctermfg=lightblue   guibg=fg        ctermbg=fg        gui=reverse,underline cterm=reverse,underline
 hi Todo         guifg=#d14a14   ctermfg=red         guibg=#1248d1   ctermbg=darkblue
