@@ -238,17 +238,10 @@ silent! xmap <unique> g# <Plug>(visualstar-g#)
 
 " gitgutter.vim
 " The default styles link to diff styles, which are too bright for me.
-"
-" I have to use 'hi link' instead of just straight 'hi' to work around the bug
-" fixed in Vim 7.4.318 - highlight groups without a term setting are blown away
-" by 'hi link default', which is done by gitgutter.vim.
-hi myGitGutterAddLine    guibg=#002040
-hi myGitGutterChangeLine guibg=#101040
-hi myGitGutterDeleteLine guibg=#100040
-hi link GitGutterAddLine          myGitGutterAddLine
-hi link GitGutterChangeLine       myGitGutterChangeLine
-hi link GitGutterChangeDeleteLine myGitGutterChangeLine
-hi link GitGutterDeleteLine       myGitGutterDeleteLine
+hi GitGutterAddLine    guibg=#002040
+hi GitGutterChangeLine guibg=#101040
+hi GitGutterDeleteLine guibg=#100040
+hi link GitGutterChangeDeleteLine GitGutterChangeLine
 let g:gitgutter_enabled = 0
 let g:gitgutter_escape_grep = 1
 let g:gitgutter_map_keys = 0
