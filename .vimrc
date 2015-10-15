@@ -290,7 +290,6 @@ if filereadable($HOME.'/.vim/rc-private.vim')
 endif
 
 " EasyMotion:
-" Make "s<char><char>" find a 2-character sequence.
-map gs <Plug>(easymotion-s2)
-" Allow case-insensitive searches if the query is all lowercase.
+" Make "S<char><char>" find a 2-character sequence, case insensitive.
+map S <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
