@@ -273,6 +273,11 @@ zle -N cycle-quotes
 bindkey "^['" cycle-quotes
 bindkey "\\M-'" cycle-quotes
 
+# Expand aliases and $PATH for the the word under the cursor with ^X^I (^X tab).
+autoload -U expand-last-word
+zle -N expand-last-word
+bindkey '^X^I' expand-last-word
+
 # Make ^V display a "^" while it is waiting for the next key, like vi does.
 bindkey '^V' vi-quoted-insert
 

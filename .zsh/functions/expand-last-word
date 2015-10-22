@@ -1,0 +1,16 @@
+# Expand aliases and $PATH for the word under the cursor.
+#
+# This is similar to expand-cmd-path except:
+# - It expand under the cursor, rather than the first word on the line.
+# - It also expands aliases.
+#
+# Source: http://www.zsh.org/mla/users/2000/msg00087.html
+
+local word="${(M)LBUFFER%%[^ \t\;\|\{\}]##}" exp
+if (( $+commands[$word] )); then
+  exp="$commands[$word]"
+elif (( $+aliases[$word] )); then
+  exp="$aliases[$word]"
+fi
+[[ -n "$exp" ]] && LBUFFER="${LBUFFER%$word}$exp"
+# vim: sw=2 sts=2 et ft=zsh:
