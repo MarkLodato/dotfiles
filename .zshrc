@@ -103,6 +103,7 @@ alias gdiff='git diff --no-index --no-prefix'
 alias gdiffw='git diff --no-index --no-prefix --color-words'
 alias ggrep='git grep --no-index'
 alias chrome='google-chrome'
+alias :e='vim'
 if ! which ack &>/dev/null && which ack-grep &>/dev/null; then
   alias ack=ack-grep
 fi
