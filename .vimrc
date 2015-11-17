@@ -7,13 +7,13 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'gmarik/vundle'
 
   " Bundles
-  Plugin 'Lokaltog/vim-easymotion'
   Plugin 'VisIncr'
   Plugin 'a.vim'
   Plugin 'airblade/vim-gitgutter'
   Plugin 'danro/rename.vim'
   Plugin 'gerw/vim-HiLinkTrace'
   Plugin 'hynek/vim-python-pep8-indent'
+  Plugin 'justinmk/vim-sneak'
   Plugin 'othree/html5.vim'
   Plugin 'sjl/gundo.vim'
   Plugin 'vim-jp/cpp-vim'
@@ -290,7 +290,6 @@ if filereadable($HOME.'/.vim/rc-private.vim')
   source ~/.vim/rc-private.vim
 endif
 
-" EasyMotion:
-" Make "S<char><char>" find a 2-character sequence, case insensitive.
-map S <Plug>(easymotion-s2)
-let g:EasyMotion_smartcase = 1
+" vim-sneak:
+let g:sneak#use_ic_scs = 1  " honor 'ignorecase' and 'smartcase'
+hi link SneakPluginTarget Cleared
