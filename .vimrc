@@ -285,11 +285,11 @@ augroup END
 " Allow % to work with <>'s in C++.
 autocmd FileType cpp set matchpairs+=<:>
 
+" vim-sneak:
+let g:sneak#use_ic_scs = 1  " honor 'ignorecase' and 'smartcase'
+hi link SneakPluginTarget Cleared
+
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
   source ~/.vim/rc-private.vim
 endif
-
-" vim-sneak:
-let g:sneak#use_ic_scs = 1  " honor 'ignorecase' and 'smartcase'
-hi link SneakPluginTarget Cleared
