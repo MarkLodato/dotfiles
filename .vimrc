@@ -7,6 +7,7 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'gmarik/vundle'
 
   " Bundles
+  Plugin 'Lokaltog/vim-easymotion'
   Plugin 'VisIncr'
   Plugin 'a.vim'
   Plugin 'airblade/vim-gitgutter'
@@ -288,6 +289,10 @@ autocmd FileType cpp set matchpairs+=<:>
 " vim-sneak:
 let g:sneak#use_ic_scs = 1  " honor 'ignorecase' and 'smartcase'
 hi link SneakPluginTarget Cleared
+
+" EasyMotion:
+map gs <Plug>(easymotion-s2)
+let g:EasyMotion_smartcase = 1
 
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
