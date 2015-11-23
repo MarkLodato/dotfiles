@@ -14,7 +14,6 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'danro/rename.vim'
   Plugin 'gerw/vim-HiLinkTrace'
   Plugin 'hynek/vim-python-pep8-indent'
-  Plugin 'justinmk/vim-sneak'
   Plugin 'othree/html5.vim'
   Plugin 'sjl/gundo.vim'
   Plugin 'vim-jp/cpp-vim'
@@ -285,10 +284,6 @@ augroup END
 
 " Allow % to work with <>'s in C++.
 autocmd FileType cpp set matchpairs+=<:>
-
-" vim-sneak:
-let g:sneak#use_ic_scs = 1  " honor 'ignorecase' and 'smartcase'
-hi link SneakPluginTarget Cleared
 
 " EasyMotion:
 map gs <Plug>(easymotion-s2)
