@@ -180,6 +180,11 @@ inoremap <C-f> <C-o>t
 inoremap <A-t> <C-o>t
 inoremap <C-t> <C-o>t
 
+" Map \vs to split vertically and scrollbind.
+" Source: http://vim.wikia.com/wiki/View_text_file_in_two_columns
+noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo
+      \ vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
+
 " Map \s<motion> to :sort that area, and \ss to :sort in the paragraph.
 function! SortMap(type) range
   '[,']sort
