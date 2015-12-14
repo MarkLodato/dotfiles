@@ -78,7 +78,9 @@ set textwidth=80
 set cinoptions+=g0(0t0p0
 
 syntax on
-syntax sync maxlines=750
+
+" Increase sync backwards search for files that often mess up.
+autocmd Syntax markdown syntax sync fromstart
 
 if has('autocmd')
   filetype plugin indent on
