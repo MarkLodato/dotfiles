@@ -209,6 +209,12 @@ zle -N copy-earlier-word
 bindkey '\e>' copy-earlier-word
 bindkey '\M->' copy-earlier-word
 
+# Make CTRL-r search use a pattern rather than an exact match.
+bindkey '^R' history-incremental-pattern-search-backward
+
+# Make CTRL-f cycle backwards during a CTRL-r search.
+bindkey -M isearch '^F' history-incremental-search-forward
+
 # Find home, insert, delete, and end.
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[7~' beginning-of-line
