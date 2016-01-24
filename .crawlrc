@@ -62,6 +62,26 @@ autoinscribe += rod of:!a
 autoinscribe += staff of (Wucad Mu|energy|channeling|wizardry|power):!a
 autoinscribe += staff of (conjuration|enchantment|summoning|poison):!a
 
+# Rebind shift-move to safe moving.
+bindkey = [H] CMD_SAFE_MOVE_LEFT
+bindkey = [J] CMD_SAFE_MOVE_DOWN
+bindkey = [K] CMD_SAFE_MOVE_UP
+bindkey = [L] CMD_SAFE_MOVE_RIGHT
+bindkey = [Y] CMD_SAFE_MOVE_UP_LEFT
+bindkey = [U] CMD_SAFE_MOVE_UP_RIGHT
+bindkey = [B] CMD_SAFE_MOVE_DOWN_LEFT
+bindkey = [N] CMD_SAFE_MOVE_DOWN_RIGHT
+# Remap shift-numpad to vi keys, since they are otherwise not bindable.
+macros += K: \{-238} Y
+macros += K: \{-243} K
+macros += K: \{-235} U
+macros += K: \{-241} H
+# macros += K: \{-236}   <-- shift-5
+macros += K: \{-240} L
+macros += K: \{-237} B
+macros += K: \{-242} J
+macros += K: \{-234} N
+
 ###########
 # Prompts #
 ###########
