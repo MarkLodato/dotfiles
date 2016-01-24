@@ -99,6 +99,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias diff='diff -u'
+alias grep='grep --color=auto'
 alias gdiff='git diff --no-index --no-prefix'
 alias gdiffw='git diff --no-index --no-prefix --color-words'
 alias ggrep='git grep --no-index'
@@ -107,8 +108,6 @@ alias :e='vim'
 if ! which ack &>/dev/null && which ack-grep &>/dev/null; then
   alias ack=ack-grep
 fi
-
-export GREP_OPTIONS='--color=auto'
 
 # `yesno` is useful for experimentally testing conditionals.
 # Example: [[ $x = *foo* ]]; yesno
