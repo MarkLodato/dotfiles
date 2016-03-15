@@ -54,3 +54,10 @@
 	helper = gnome-keyring
 [recent-branches]
 	ignore = ^junk/
+[pager]
+	diff = diff-so-fancy | less -FRSX
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22

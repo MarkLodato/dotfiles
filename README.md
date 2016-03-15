@@ -19,6 +19,7 @@ need to jump through the following hoops:
     $ cd p
     $ git clone https://github.com/MarkLodato/git-reparent
     $ git clone https://github.com/MarkLodato/scripts
+    $ git clone https://github.com/so-fancy/diff-so-fancy
 
 Explanation: First, we check out the repository and move the .git directory to
 ~/.dotfiles.git.  (We do not use `git clone --bare` because that would tell git
