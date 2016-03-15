@@ -87,10 +87,11 @@ autoload zargs
 autoload -U run-help
 autoload -U run-help-git
 
+# The LC_COLLATE=C sorts using ASCII, so uppercase comes before lowercase.
 if ls --color=auto -d / &>/dev/null; then
-  alias ls='ls --color=auto'  # GNU coreutils
+  alias ls='LC_COLLATE=C ls --color=auto'  # GNU coreutils
 else
-  alias ls='ls -G'  # BSD / Mac OS X
+  alias ls='LC_COLLATE=C ls -G'  # BSD / Mac OS X
 fi
 alias lsa='ls -A'
 alias ll='ls -lh'
