@@ -15,6 +15,10 @@ need to jump through the following hoops:
     $ alias gd='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
     $ gd checkout ~
     $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+    $ mkdir p
+    $ cd p
+    $ git clone https://github.com/MarkLodato/git-reparent
+    $ git clone https://github.com/MarkLodato/scripts
 
 Explanation: First, we check out the repository and move the .git directory to
 ~/.dotfiles.git.  (We do not use `git clone --bare` because that would tell git
