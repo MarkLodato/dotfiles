@@ -1,4 +1,4 @@
-export LESS="-iFRX"
+export LESS="-iFRXj5$"
 export PATH="$HOME/local/bin:$HOME/p/scripts:$HOME/personal/scripts:$PATH"
 
 if [[ $TERM == xterm ]]; then
