@@ -2,7 +2,6 @@
 # Try to exec diff-so-fancy if it exists; otherwise call cat.
 PATHS=(
   ~/p/diff-so-fancy/diff-so-fancy
-  ~/personal/diff-so-fancy/diff-so-fancy
 )
 for p in "${PATHS[@]}"; do
   [[ -x $p ]] && exec "$p" "$@"

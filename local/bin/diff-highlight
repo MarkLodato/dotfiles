@@ -2,7 +2,6 @@
 # Try to exec diff-highlight from the diff-so-fancy repo; otherwise call cat.
 PATHS=(
   ~/p/diff-so-fancy/third_party/diff-highlight/diff-highlight
-  ~/personal/diff-so-fancy/third_party/diff-highlight/diff-highlight
 )
 for p in "${PATHS[@]}"; do
   [[ -x $p ]] && exec "$p" "$@"
