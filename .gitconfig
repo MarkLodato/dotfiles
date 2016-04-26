@@ -15,6 +15,7 @@
 	la  = log --graph --decorate --oneline --all --remotes --date-order
 	lat = log --graph --decorate --oneline --all --remotes
 	ls  = log --graph --decorate --oneline --date-order -5
+	lu  = log --graph --decorate --oneline --date-order '@{upstream}..'
 	s = status -sb
 	tag-sorted = !git tag | xargs -IT git log -n1 --format=%at-T T | sort -rnk1 | cut -d- -f2-
 	ack = -c color.grep.filename=6 grep --break --heading
