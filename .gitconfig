@@ -61,4 +61,4 @@
 [recent-branches]
 	ignore = ^junk/
 [pager]
-	diff = diff-so-fancy | less -FRSX
+	diff = diff-so-fancy | less
