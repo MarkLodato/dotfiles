@@ -1,4 +1,4 @@
-# See /usr/share/doc/crawl-common/options_guide.txt
+# https://github.com/crawl/crawl/blob/master/crawl-ref/docs/options_guide.txt
 
 tile_skip_title = true
 default_manual_training = true
@@ -8,11 +8,18 @@ auto_exclude += mimic
 autoinscribe += curare:!*
 explore_stop_pickup_ignore += curare
 autopickup_exceptions += <curare-tipped needle
+autopickup_exceptions += <poisoned needle
+autopickup_exceptions += <javelin
+autopickup_exceptions += <tomahawk
 autopickup_exceptions += <potion of mutation
 travel_delay = 40
 : if you.race() ~= "Vampire" then
 autopickup_exceptions += <
 : end
+
+# The default fsim is only 4000 rounds, which is too low to produce stastically
+# significant results.  This is much slower but more reliable.
+#fsim_rounds = 50000
 
 auto_drop_chunks = rotten
 #auto_eat_chunks = true
@@ -41,13 +48,26 @@ mp_warning = 25
 hp_colour = 75:yellow, 50:lightred, 25:red
 mp_colour = 75:yellow, 50:lightred, 25:red
 stat_colour = 1: red, 3:lightred, 7:yellow
+channel.examine = darkgrey
+channel.floor = darkgrey
 channel.monster_damage = darkgrey
+channel.monster_warning = brown
+channel.rotten_meat = darkgray
+channel.sound = cyan
+channel.talk = cyan
+message_colour += darkgray:Things that are here
+message_colour += darkgray:You now have.*gold piece
+message_colour += darkgray:You bottle.*blood
+message_colour += darkgray:You butcher.*corpse
+message_colour += darkgray:accepts your kill
+message_colour += brown:is nearby!
+message_colour += magenta:You kill
 message_colour += yellow:(resists|to resist)
+message_colour += yellow:corrodes?
+message_colour += yellow:You feel drained
 message_colour += red:unaffected
-message_colour += red:You kill
 message_colour += red:You feel your power drain away
 message_colour += red:You miscast
-message_colour += yellow:corrodes?
 
 note_hp_percent = 25
 note_all_skill_levels = true
@@ -92,15 +112,11 @@ more += mutation:
 #more += danger:
 #more += warning:
 #more += comes? into view
-more += is unaffected
+#more += is unaffected
 more += LOW \S+ WARNING
-more += freezes? and shatters?
-more += scroll.*catch(es?) fire
 
 # Important features
-more += You have a vision of.*gates?
-more += interdimensional caravan
-more += distant snort
+more += timed_portal:
 more += Found a gateway leading out of the Abyss
 more += Found .* abyssal rune of Zot
 more += terrible weight on your shoulders
@@ -128,7 +144,7 @@ more += Ouch! That really hurt!
 more += dispelling energy hits you
 more += You convulse
 more += You are (blasted|electrocuted)!
-more += You are.*(confused|poisoned)
+more += You are (?!no longer).*(confused|poisoned)
 more += flesh start
 #more += (starving|devoid of blood)
 more += wrath finds you
@@ -141,28 +157,30 @@ more += Space bends around you\.
 more += watched by something
 more += about to expire
 more += less protected from missiles
+more += You feel drained
 
 # Expiring effects
-more += You feel yourself slow down
-more += You flicker (for a moment|back into view)
-more += less insulated
-more += You are starting to lose your buoyancy
-more += You lose control over your flight
-more += Your hearing returns
-more += Your transformation is almost over
-more += You have a feeling this form
-more += You feel yourself come back to life
-more += uncertain
-more += time is quickly running out
-more += life is in your own hands
-more += is no longer charmed
-more += shroud falls apart
-more += You start to feel a little slower
-more += Your skin feels tender
-more += Your extra speed is starting to run out
-more += You feel closer to the material plane
-more += You are firmly grounded in the material plane once more
-more += finished your manual
+more += duration:
+#more += You feel yourself slow down
+#more += You flicker (for a moment|back into view)
+#more += less insulated
+#more += You are starting to lose your buoyancy
+#more += You lose control over your flight
+#more += Your hearing returns
+#more += Your transformation is almost over
+#more += You have a feeling this form
+#more += You feel yourself come back to life
+#more += uncertain
+#more += time is quickly running out
+#more += life is in your own hands
+#more += is no longer charmed
+#more += shroud falls apart
+#more += You start to feel a little slower
+#more += Your skin feels tender
+#more += Your extra speed is starting to run out
+#more += You feel closer to the material plane
+#more += You are firmly grounded in the material plane once more
+#more += finished your manual
 
 # Others
 more += You have reached level
@@ -172,5 +190,3 @@ more += Jiyva alters your body
 : if you.god() == "Xom" then
 more += god:
 : end
-
-
