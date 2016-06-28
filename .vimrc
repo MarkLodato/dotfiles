@@ -13,6 +13,9 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'airblade/vim-gitgutter'
   Plugin 'danro/rename.vim'
   Plugin 'gerw/vim-HiLinkTrace'
+  Plugin 'google/vim-codefmt'
+  Plugin 'google/vim-glaive'
+  Plugin 'google/vim-maktaba'
   Plugin 'hynek/vim-python-pep8-indent'
   Plugin 'othree/html5.vim'
   Plugin 'sjl/gundo.vim'
@@ -37,6 +40,9 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   "Plugin 'scrooloose/nerdcommenter'  " vim-commentary is good enough
 
   call vundle#end()
+  if exists("glaive#Install")
+    call glaive#Install()
+  endif
 endif  " vundle directory exists
 
 " General options
@@ -295,6 +301,12 @@ autocmd FileType cpp set matchpairs+=<:>
 " EasyMotion:
 map gs <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
+
+" vim-codefmt:
+nnoremap <Leader>f :set opfunc=codefmt#FormatMap<CR>g@
+nnoremap <Leader>ff :FormatLines<CR>
+nnoremap <Leader>fb :FormatCode<CR>
+vnoremap <Leader>f :FormatLines<CR>
 
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
