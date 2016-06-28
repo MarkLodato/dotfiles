@@ -65,10 +65,10 @@ set nrformats-=octal
 set ruler
 set scrolloff=1
 set shiftround
-set shiftwidth=4
+set shiftwidth=2
 set showcmd
 set sidescrolloff=5
-set softtabstop=4
+set softtabstop=2
 set smarttab
 set suffixes+=.pdf,.ps,.lo,.la
 set suffixes-=.h
