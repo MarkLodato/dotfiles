@@ -64,7 +64,6 @@ set noequalalways
 set nrformats-=octal
 set ruler
 set scrolloff=1
-set shiftround
 set shiftwidth=2
 set showcmd
 set sidescrolloff=5
