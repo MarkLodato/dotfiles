@@ -170,6 +170,7 @@ __pycache__
 /.ipython/profile_default/static
 
 !/.config/git
+!/.config/mpv
 
 !/.config/xfce4
 /.config/xfce4/*
