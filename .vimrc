@@ -18,6 +18,7 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'google/vim-maktaba'
   Plugin 'hynek/vim-python-pep8-indent'
   Plugin 'othree/html5.vim'
+  Plugin 'pangloss/vim-javascript'
   Plugin 'sjl/gundo.vim'
   Plugin 'vim-jp/cpp-vim'
   Plugin 'thinca/vim-visualstar'
