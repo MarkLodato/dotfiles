@@ -6,6 +6,7 @@
 	diffw = diff --color-words
 	diffcw = diff --cached --color-words
 	diffwc = diff --cached --color-words
+	ds = diff --stat --relative
 	co = checkout
 	k = !sh -c 'gitk \"$@\" &' git-k
 	#k = !sh -c '[ "$#" -eq 0 ] && gitk --all --date-order HEAD || gitk "\"$@\"" &' git-k
