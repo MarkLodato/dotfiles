@@ -23,6 +23,7 @@ __pycache__
 /.apport-ignore.xml
 /.aptitude
 /.aspell.*
+/.audacity-data
 /.avidemux
 /.bash_history
 /.bzr.log
@@ -49,6 +50,7 @@ __pycache__
 /.gnome2_private
 /.goutputstream-*
 /.gstreamer-0.10
+/.gsutil
 /.gtk-bookmarks
 /.gvfs
 /.history
@@ -64,6 +66,8 @@ __pycache__
 /.mono
 /.mozc
 /.news_time
+/.node_repl_history
+/.npm
 /.nv
 /.nvidia-settings-rc
 /.nviminfo
@@ -75,6 +79,7 @@ __pycache__
 /.psi
 /.pulse
 /.pulse-cookie
+/.python_history
 /.qt
 /.rnd
 /.selected_editor
@@ -84,6 +89,7 @@ __pycache__
 /.steam
 /.steampath
 /.steampid
+/.sudo_as_admin_successful
 /.swp
 /.swt
 /.thumbnails
@@ -126,6 +132,7 @@ __pycache__
 
 # Sensitive files and directories that should never be checked in.
 /.TrueCrypt
+/.VeraCrypt
 /.appcfg_cookies
 /.appcfg_oauth2_tokens
 /.gnupg
