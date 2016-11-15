@@ -1,3 +1,4 @@
+
 c = get_config()
 
 c.InteractiveShell.colors = 'Linux'  # Use dark background color scheme.
@@ -17,10 +18,23 @@ c.TerminalInteractiveShell.readline_parse_and_bind = [
 ]
 
 # Make the IPython prompt look like the regular Python one.
-c.PromptManager.in_template = '>>> '
-c.PromptManager.in2_template = '... '
-c.PromptManager.out_template = ''
-c.PromptManager.justify = False
+try:
+    from IPython.terminal.prompts import Prompts, Token
+except ImportError:
+    c.PromptManager.in_template = '>>> '
+    c.PromptManager.in2_template = '... '
+    c.PromptManager.out_template = ''
+    c.PromptManager.justify = False
+else:
+    class BasicPythonPrompt(Prompts):
+        """Emulates the regular python interactive prompt."""
+        def in_prompt_tokens(self, cli=None):
+            return [(Token.Prompt, '>>> ')]
+        def continuation_prompt_tokens(self, cli=None, width=None):
+            return [(Token.Prompt, '... ')]
+        def out_prompt_tokens(self, cli=None):
+            return []
+    c.TerminalInteractiveShell.prompts_class = BasicPythonPrompt
 
 # Set up aliases for shell commands.
 c.AliasManager.user_aliases = [
