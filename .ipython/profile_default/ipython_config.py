@@ -1,6 +1,14 @@
 import shutil
 import signal
 import sys
+# Import numpy now to set the terminal width. I could use wrapt to delay the
+# terminal width setting until it is actually loaded, but that seems more
+# complicated than it is worth.
+# http://stackoverflow.com/a/40624185/303425
+try:
+    import numpy as np
+except ImportError:
+    pass
 
 c = get_config()
 
