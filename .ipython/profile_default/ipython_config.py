@@ -1,6 +1,8 @@
+import IPython
 import shutil
 import signal
 import sys
+
 # Import numpy now to set the terminal width. I could use wrapt to delay the
 # terminal width setting until it is actually loaded, but that seems more
 # complicated than it is worth.
@@ -57,11 +59,22 @@ c.AliasManager.user_aliases = [('git', 'git'), ]
 def update_terminal_width(*ignored):
     """Resize the IPython and numpy printing width to match the terminal."""
     w, h = shutil.get_terminal_size()
-    c.PlainTextFormatter.max_width = w - 1
+
+    config = IPython.get_ipython().config
+    config.PlainTextFormatter.max_width = w - 1
+    shell = IPython.core.interactiveshell.InteractiveShell.instance()
+    shell.init_display_formatter()
+
     if 'numpy' in sys.modules:
         import numpy as np
         np.set_printoptions(linewidth=w - 5)
 
+# We need to configure IPython here differently because get_ipython() does not
+# yet exist.
+w, h = shutil.get_terminal_size()
+c.PlainTextFormatter.max_width = w - 1
+if 'numpy' in sys.modules:
+    import numpy as np
+    np.set_printoptions(linewidth=w - 5)
 
-update_terminal_width()
 signal.signal(signal.SIGWINCH, update_terminal_width)
