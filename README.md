@@ -14,7 +14,7 @@ need to jump through the following hoops:
     $ rmdir dotfiles.tmp
     $ alias gd='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
     $ gd checkout ~
-    $ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+    $ vim +PlugInstall +qall
     $ mkdir p
     $ cd p
     $ git clone https://github.com/MarkLodato/git-reparent

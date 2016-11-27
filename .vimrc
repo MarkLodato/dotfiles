@@ -1,55 +1,46 @@
-" Vundle - all of the following is required
-set nocompatible
-filetype off
-if isdirectory(expand("~/.vim/bundle/vundle/"))
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#begin()
-  Plugin 'gmarik/vundle'
+" --- Start of modules ---
+call plug#begin('~/.vim/plugged')
 
-  " Bundles
-  Plugin 'Lokaltog/vim-easymotion'
-  Plugin 'VisIncr'
-  Plugin 'a.vim'
-  Plugin 'airblade/vim-gitgutter'
-  Plugin 'danro/rename.vim'
-  Plugin 'gerw/vim-HiLinkTrace'
-  Plugin 'hynek/vim-python-pep8-indent'
-  Plugin 'othree/html5.vim'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'sjl/gundo.vim'
-  Plugin 'vim-jp/cpp-vim'
-  Plugin 'thinca/vim-visualstar'
-  Plugin 'tpope/vim-abolish'
-  Plugin 'tpope/vim-characterize'
-  Plugin 'tpope/vim-commentary'
-  Plugin 'tpope/vim-fugitive'
-  Plugin 'tpope/vim-git'
-  Plugin 'tpope/vim-liquid'
-  "Plugin 'tpope/vim-markdown'
-  Plugin 'MarkLodato/vim-markdown'  " until tpope pulls the changes
-  Plugin 'tpope/vim-repeat'
-  Plugin 'tpope/vim-rsi'
-  Plugin 'tpope/vim-surround'
-  Plugin 'tpope/vim-unimpaired'
-  Plugin 'vim-scripts/svg.vim'
-  " Consider installing conque (which i don't think is Vundle-compatible)
+"Plug 'tpope/vim-markdown'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'MarkLodato/vim-markdown'  " until tpope pulls the changes
+Plug 'VisIncr'
+Plug 'a.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'danro/rename.vim'
+Plug 'gerw/vim-HiLinkTrace'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'sjl/gundo.vim'
+Plug 'thinca/vim-visualstar'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-liquid'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-jp/cpp-vim'
+Plug 'vim-scripts/svg.vim'
 
-  if !filereadable(expand('~/.at_google'))
-    Plugin 'google/vim-codefmt'
-    Plugin 'google/vim-glaive'
-    Plugin 'google/vim-maktaba'
-  endif
+if !filereadable(expand('~/.at_google'))
+  Plug 'google/vim-codefmt'
+  Plug 'google/vim-glaive'
+  Plug 'google/vim-maktaba'
+endif
 
-  " Bundles that are nice but that I don't need anymore:
-  "Plugin 'scrooloose/nerdcommenter'  " vim-commentary is good enough
-
-  call vundle#end()
-  if exists("glaive#Install")
-    call glaive#Install()
-  endif
-endif  " vundle directory exists
+call plug#end()
+if exists("glaive#Install")
+  call glaive#Install()
+endif
+" --- End of modules ---
 
 " General options
+set nocompatible
 set autoindent
 set autoread
 set backspace=indent,eol,start

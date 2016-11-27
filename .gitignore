@@ -153,7 +153,7 @@ __pycache__
 /.zsh/cache
 
 # Ignore vim bundles, which can be downloaded again.
-/.vim/bundle
+/.vim/plugged
 
 # The log file is created by YCM, I think.
 /.vim/data/log
