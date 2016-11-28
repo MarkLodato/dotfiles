@@ -13,9 +13,6 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'airblade/vim-gitgutter'
   Plugin 'danro/rename.vim'
   Plugin 'gerw/vim-HiLinkTrace'
-  Plugin 'google/vim-codefmt'
-  Plugin 'google/vim-glaive'
-  Plugin 'google/vim-maktaba'
   Plugin 'hynek/vim-python-pep8-indent'
   Plugin 'othree/html5.vim'
   Plugin 'pangloss/vim-javascript'
@@ -36,6 +33,12 @@ if isdirectory(expand("~/.vim/bundle/vundle/"))
   Plugin 'tpope/vim-unimpaired'
   Plugin 'vim-scripts/svg.vim'
   " Consider installing conque (which i don't think is Vundle-compatible)
+
+  if !filereadable(expand('~/.at_google'))
+    Plugin 'google/vim-codefmt'
+    Plugin 'google/vim-glaive'
+    Plugin 'google/vim-maktaba'
+  endif
 
   " Bundles that are nice but that I don't need anymore:
   "Plugin 'scrooloose/nerdcommenter'  " vim-commentary is good enough
