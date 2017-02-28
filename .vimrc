@@ -303,6 +303,16 @@ nnoremap <Leader>ff :FormatLines<CR>
 nnoremap <Leader>fb :FormatCode<CR>
 vnoremap <Leader>f :FormatLines<CR>
 
+" CTRL-Y = yank to clipboard
+" Source: https://sunaku.github.io/tmux-yank-osc52.html
+if exists('$TMUX')
+  " copy to attached terminal using the yank(1) script:
+  " https://github.com/sunaku/home/blob/master/bin/yank
+  noremap <silent> <C-y> y:call system('yank > /dev/tty', @0)<Return>
+else
+  noremap <C-y> "+y
+endif
+
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
   source ~/.vim/rc-private.vim
