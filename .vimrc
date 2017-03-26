@@ -6,11 +6,11 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'MarkLodato/vim-markdown'  " until tpope pulls the changes
 Plug 'VisIncr'
 Plug 'a.vim'
-Plug 'airblade/vim-gitgutter'
 Plug 'danro/rename.vim'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'kongo2002/fsharp-vim'
+Plug 'mhinz/vim-signify'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'sjl/gundo.vim'
@@ -195,13 +195,13 @@ nmap <Leader>ss <Leader>sip
 vnoremap <Leader>s :sort<CR>
 
 " Create the window that I like
-let g:big_window_gitgutter=1
+let g:big_window_signify=1
 function! BigWindow()
   top vsplit
   set lines=90
-  if g:big_window_gitgutter
+  if g:big_window_signify
     set columns=165
-    GitGutterEnable
+    SignifyEnable
   else
     set columns=161
   endif
@@ -244,27 +244,43 @@ silent! xmap <unique> g* <Plug>(visualstar-g*)
 silent! xmap <unique> g<kMultiply> <Plug>(visualstar-g*)
 silent! xmap <unique> g# <Plug>(visualstar-g#)
 
-" gitgutter.vim
-" The default styles link to diff styles, which are too bright for me.
-hi GitGutterAddLine    guibg=#002040
-hi GitGutterChangeLine guibg=#101040
-hi GitGutterDeleteLine guibg=#100040
-hi link GitGutterChangeDeleteLine GitGutterChangeLine
-let g:gitgutter_enabled = 0
-let g:gitgutter_escape_grep = 1
-let g:gitgutter_map_keys = 0
-let g:gitgutter_max_signs = 2000
-let g:gitgutter_override_sign_column_highlight = 0
-let g:gitgutter_sign_column_always = 1
-let g:gitgutter_diff_base = 'HEAD'
-nnoremap <Leader>gg :GitGutterToggle<CR>
-nnoremap <Leader>gl :GitGutterLineHighlightsToggle<CR>
-nnoremap <Leader>gn :GitGutterNextHunk<CR>
-nnoremap <Leader>gp :GitGutterPrevHunk<CR>
-nnoremap <Leader>gu :GitGutterAll<CR>
-" Toggle the diff base.
-nnoremap <Leader>gh :let g:gitgutter_diff_base='HEAD'<CR>
-nnoremap <Leader>gi :let g:gitgutter_diff_base=''<CR>
+" signify.vim
+hi SignifyLineAdd    guibg=#002040
+hi SignifyLineChange guibg=#101040
+hi SignifyLineDelete guibg=#100040
+hi link SignifyLineChangeDelete    SignifyLineChange
+hi link SignifyLineDeleteFirstLine SignifyLineDelete
+hi SignifySignAdd    guifg=#009900 guibg=#000030 ctermfg=2 ctermbg=234
+hi SignifySignChange guifg=#bbbb00 guibg=#000030 ctermfg=3 ctermbg=234
+hi SignifySignDelete guifg=#ff2222 guibg=#000030 ctermfg=1 ctermbg=234
+function! SignifyGitDiffBase(diffbase)
+  if len(a:diffbase) > 0
+    let l:diffbase = shellescape(a:diffbase)
+    " Verify the the diffbase exists. Signify silently ignores diff errors so we
+    " have to do this ourselves.
+    silent let l:error = system('git rev-parse --verify ' .
+          \ l:diffbase . '^{commit} >&2')
+    if v:shell_error
+      echoerr l:error
+      return 1
+    endif
+  else
+    let l:diffbase = ''
+  endif
+  let g:signify_vcs_cmds['git'] = 'git diff --no-color --no-ext-diff -U0 ' .
+        \ l:diffbase . ' -- %f'
+  execute 'SignifyRefresh'
+endfunction
+let g:signify_vcs_list = ['git']
+let g:signify_sign_change = '~'
+let g:signify_sign_changedelete = '~_'
+let g:signify_sign_show_count = 0
+nnoremap <Leader>gg :SignifyToggle<CR>
+nnoremap <Leader>gl :SignifyToggleHighlight<CR>
+nnoremap <Leader>gr :SignifyRefresh<CR>
+nnoremap <Leader>gh :call SignifyGitDiffBase('HEAD')<CR>
+nnoremap <Leader>gu :call SignifyGitDiffBase('@{upstream}')<CR>
+nnoremap <Leader>gi :call SignifyGitDiffBase('')<CR>
 
 " Allow % (matchit.vim) to work with merge conflict markers.
 " This is simplified from rhysd/conflict_marker.vim.
