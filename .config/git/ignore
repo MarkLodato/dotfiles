@@ -1,6 +1,7 @@
 # Ignore vim temporary files.
 .*.pyc
 .*.sw[a-z]
+.sw[a-z]
 .*.un~
 __pycache__
 
