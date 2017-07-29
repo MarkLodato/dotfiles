@@ -1,7 +1,17 @@
 import IPython
-import shutil
 import signal
 import sys
+
+# shutil.get_terminal_size is only Python 3.
+# To make this work in Python 2, do:
+#       pip install backports.shutil_get_terminal_size
+try:
+    from shutil import get_terminal_size
+except ImportError:
+    try:
+        from backports.shutil_get_terminal_size import get_terminal_size
+    except ImportError:
+        get_terminal_size = None
 
 # Import numpy now to set the terminal width. I could use wrapt to delay the
 # terminal width setting until it is actually loaded, but that seems more
@@ -56,25 +66,26 @@ else:
 c.AliasManager.user_aliases = [('git', 'git'), ]
 
 
-def update_terminal_width(*ignored):
-    """Resize the IPython and numpy printing width to match the terminal."""
-    w, h = shutil.get_terminal_size()
+if get_terminal_size is not None:
+    def update_terminal_width(*ignored):
+        """Resize the IPython and numpy printing width to match the terminal."""
+        w, h = get_terminal_size()
 
-    config = IPython.get_ipython().config
-    config.PlainTextFormatter.max_width = w - 1
-    shell = IPython.core.interactiveshell.InteractiveShell.instance()
-    shell.init_display_formatter()
+        config = IPython.get_ipython().config
+        config.PlainTextFormatter.max_width = w - 1
+        shell = IPython.core.interactiveshell.InteractiveShell.instance()
+        shell.init_display_formatter()
 
+        if 'numpy' in sys.modules:
+            import numpy as np
+            np.set_printoptions(linewidth=w - 5)
+
+    # We need to configure IPython here differently because get_ipython() does
+    # not yet exist.
+    w, h = get_terminal_size()
+    c.PlainTextFormatter.max_width = w - 1
     if 'numpy' in sys.modules:
         import numpy as np
         np.set_printoptions(linewidth=w - 5)
 
-# We need to configure IPython here differently because get_ipython() does not
-# yet exist.
-w, h = shutil.get_terminal_size()
-c.PlainTextFormatter.max_width = w - 1
-if 'numpy' in sys.modules:
-    import numpy as np
-    np.set_printoptions(linewidth=w - 5)
-
-signal.signal(signal.SIGWINCH, update_terminal_width)
+    signal.signal(signal.SIGWINCH, update_terminal_width)
