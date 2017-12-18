@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 "Plug 'tpope/vim-markdown'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'MarkLodato/vim-markdown'  " until tpope pulls the changes
 Plug 'VisIncr'
