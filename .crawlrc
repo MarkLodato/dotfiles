@@ -114,6 +114,9 @@ more += mutation:
 #more += comes? into view
 #more += is unaffected
 more += LOW \S+ WARNING
+more += caustic shrike.* into view
+more += entropy weaver.* into view
+more += curse toe.* into view
 
 # Important features
 more += timed_portal:
@@ -161,6 +164,7 @@ more += You feel drained
 
 # Expiring effects
 more += duration:
+more += spectral weapon fades away
 #more += You feel yourself slow down
 #more += You flicker (for a moment|back into view)
 #more += less insulated
