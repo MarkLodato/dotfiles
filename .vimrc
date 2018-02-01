@@ -257,8 +257,13 @@ hi SignifySignDelete guifg=#ff2222 guibg=#000030 ctermfg=1 ctermbg=234
 function! SignifyGitDiffBase(diffbase)
   let g:signify_vcs_cmds['git'] = 'git diff --no-color --no-ext-diff -U0 ' .
         \ a:diffbase . ' -- %f'
-  execute 'SignifyRefresh'
+  if exists(':SignifyRefresh')
+    execute 'SignifyRefresh'
+  endif
 endfunction
+if !exists('g:signify_vcs_cmds')
+  let g:signify_vcs_cmds = {}
+endif
 let g:signify_vcs_list = ['git']
 let g:signify_sign_change = '~'
 let g:signify_sign_changedelete = '~_'
