@@ -255,21 +255,8 @@ hi SignifySignAdd    guifg=#009900 guibg=#000030 ctermfg=2 ctermbg=234
 hi SignifySignChange guifg=#bbbb00 guibg=#000030 ctermfg=3 ctermbg=234
 hi SignifySignDelete guifg=#ff2222 guibg=#000030 ctermfg=1 ctermbg=234
 function! SignifyGitDiffBase(diffbase)
-  if len(a:diffbase) > 0
-    let l:diffbase = shellescape(a:diffbase)
-    " Verify the the diffbase exists. Signify silently ignores diff errors so we
-    " have to do this ourselves.
-    silent let l:error = system('git rev-parse --verify ' .
-          \ l:diffbase . '^{commit} >&2')
-    if v:shell_error
-      echoerr l:error
-      return 1
-    endif
-  else
-    let l:diffbase = ''
-  endif
   let g:signify_vcs_cmds['git'] = 'git diff --no-color --no-ext-diff -U0 ' .
-        \ l:diffbase . ' -- %f'
+        \ a:diffbase . ' -- %f'
   execute 'SignifyRefresh'
 endfunction
 let g:signify_vcs_list = ['git']
