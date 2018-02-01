@@ -219,12 +219,10 @@ bindkey -M isearch '^F' history-incremental-search-forward
 # Find home, insert, delete, and end.
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[7~' beginning-of-line
-bindkey '\e[H~' beginning-of-line
 bindkey '\e[2~' overwrite-mode
 bindkey '\e[3~' delete-char
 bindkey '\e[4~' end-of-line
 bindkey '\e[8~' end-of-line
-bindkey '\e[F~' end-of-line
 
 # Mac command-arrow keys (in Secure Shell plugin, at least.)
 # Cmd-Up (\e\e[A) and Cmd-Down (\e\e[B) are unbound.
