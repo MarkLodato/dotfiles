@@ -47,3 +47,9 @@ begin
     prog = irexec
     config = /usr/bin/xset dpms force off  # blank monitor
 end
+
+begin
+    button = KEY_RECORD
+    prog = irexec
+    config = /home/mark/local/bin/pithos
+end
