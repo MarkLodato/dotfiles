@@ -11,6 +11,7 @@
 __pycache__
 
 # Ignore the gitdir of this repo.
+/.dotfiles
 /.dotfiles.git
 
 # Top-level files and directories that I don't care about.
