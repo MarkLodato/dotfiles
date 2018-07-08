@@ -4,7 +4,6 @@
 
 [[ -r ~/.zsh/rc-private-top.zsh ]] && source ~/.zsh/rc-private-top.zsh
 
-[[ -z $MY_MACHINE ]] && MY_MACHINE=
 [[ -z $THIS_MACHINE ]] && THIS_MACHINE=$(hostname -s)
 
 
@@ -394,7 +393,7 @@ zstyle ':completion:*:(rm|ls|cp|mv):*' ignore-line true
 #                                    Prompt
 # ----------------------------------------------------------------------------
 #
-# The prompt looks like this, without hostname if on $MY_MACHINE.
+# The prompt looks like this, without hostname if PROMPT_SHOW_HOSTNAME is 0.
 # ……………………………………………………………………………………………………………………………………………………………… ~/non/git/dir …
 # ▶ cd ~/git/repo/subdir                                              hostname
 # …………………………………………………………………………………………………………………………… (master) ~/git/repo/subdir …
@@ -413,6 +412,14 @@ fi
 # Git branch information to display, or empty.
 PROMPT_GIT_NOCOLOR=
 PROMPT_GIT=
+
+# If 1, show the hostname in the prompt. Only set the default if it is not
+# already set.
+if (( ${+SSH_CLIENT} )); then
+  : ${PROMPT_SHOW_HOSTNAME:=1}
+else
+  : ${PROMPT_SHOW_HOSTNAME:=0}
+fi
 
 # Length of PROMPT_GIT_NOCOLOR.
 PROMPT_GIT_WIDTH=0
@@ -476,9 +483,8 @@ PS3='%94F?#%f '
 # The debug prompt.  This is just the default prompt with color.
 PS4='%94F+%N:%i>%f '
 
-# The main right-hand prompt.  We set it to the current hostname if we're not
-# on MY_MACHINE.
-if [[ "$THIS_MACHINE" != "$MY_MACHINE" ]]; then
+# The main right-hand prompt.
+if (( $PROMPT_SHOW_HOSTNAME )); then
   RPS1="%22F$THIS_MACHINE%f"
 else
   RPS1=
@@ -515,7 +521,7 @@ esac
 
 # Set the xterm title bar to "$PWD @ $THIS_MACHINE", with $PWD truncated to
 # show only the rightmost 70 characters.
-if [[ "$THIS_MACHINE" != "$MY_MACHINE" ]]; then
+if (( $PROMPT_SHOW_HOSTNAME )); then
   TITLE_SUFFIX=" @ $THIS_MACHINE"
 else
   TITLE_SUFFIX=
