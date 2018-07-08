@@ -2,33 +2,20 @@
 
 This repository contains my Linux dotfiles.
 
-### Installation
+### Installation and usage
 
-It is not possible to check out the repo directly to $HOME, or else git would
-think *everything* in the home directory is part of this repo.  Instead, we
-need to jump through the following hoops:
+Quickstart:
 
-    $ cd
-    $ git clone -n https://github.com/MarkLodato/dotfiles.git dotfiles.tmp
-    $ mv dotfiles.tmp/.git .dotfiles.git
-    $ rmdir dotfiles.tmp
-    $ alias gd='git --git-dir="$HOME/.dotfiles.git" --work-tree="$HOME"'
-    $ gd checkout ~
-    $ vim +PlugInstall +qall
-    $ mkdir p
-    $ cd p
-    $ git clone https://github.com/MarkLodato/git-reparent
-    $ git clone https://github.com/MarkLodato/scripts
+    $ mkdir -p ~/p
+    $ cd ~/p
+    $ git clone git@github.com:MarkLodato/dotfiles.git
+    $ git clone git@github.com:MarkLodato/git-reparent.git
+    $ git clone git@github.com:MarkLodato/scripts.git
     $ git clone https://github.com/so-fancy/diff-so-fancy
+    $ dotfiles/.setup_dotfiles.sh
+    $ vim +PlugInstall +qall
 
-Explanation: First, we check out the repository and move the .git directory to
-~/.dotfiles.git.  (We do not use `git clone --bare` because that would tell git
-that it is a "bare" repository without a working directory, which is not true.)
-Then, we set up an alias, `gd`, to tell git where our git directory is.  This is
-exactly what .zshrc does.  The final step is to update $HOME with the files from
-the repository.
-
-From now on, use `gd` instead of `git`.  Examples:
+From now on, use `gd` instead of `git` to manage dotfiles.  Examples:
 
     $ gd add -p
     $ gd commit
@@ -36,6 +23,39 @@ From now on, use `gd` instead of `git`.  Examples:
 The .gitignore is set up to monitor any new dotfiles but to ignore files not
 starting with a dot at the top level.  That way, `git status` will indicate any
 new files that should be added to (or ignored by) the repository.
+
+There are two branches:
+
+*   `master`, which is checked out at `~/p/dotfiles` and is pushed to GitHub
+*   `home`, which is checked out at `~` and is local to the machine
+
+To pull changes from GitHub:
+
+    $ cd ~/p/dotfiles
+    $ git pull --ff-only
+    $ gd merge --ff-only
+
+To push changes to GitHub:
+
+    $ cd ~/p/dotfiles
+    $ git merge --ff-only home
+    $ git push
+
+#### Explanation
+
+It is undesirable to check out the repo directly to `~` because then git would
+think *everything* in the home directory is part of this repo. Instead we move
+the .git directory elsewhere and specify `--git-dir=... --work-tree=$HOME` via
+an alias, `gd`. This way we only manage dotfiles intentionally.
+
+We also maintain two separate
+[worktrees](https://git-scm.com/docs/git-worktree), `~` and `~/p/dotfiles`, on
+branches `home` and `master`, respectively. This dual-worktree setup allows us
+to carefully control what gets pushed to GitHub. It also allows us to avoid
+messing up our live dotfiles with merge conflicts.
+
+The `.setup_dotfiles.sh` script creates a dummy alternate worktree at
+`~/.dotfiles` and then checks out the files to `$HOME`.
 
 #### Alternate Installation
 
