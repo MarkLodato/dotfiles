@@ -1,5 +1,5 @@
 export LESS="-iFRXj5$"
-export PATH="$HOME/local/bin:$HOME/p/scripts:$PATH"
+export PATH="$HOME/local/bin:$HOME/p/scripts:$HOME/.local/bin:$PATH"
 
 if [[ $TERM == xterm ]]; then
     case "$COLORTERM" in
