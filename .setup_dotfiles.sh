@@ -16,8 +16,8 @@ USAGE: $PROG [-f|--force] [-b <branch>|-B <branch>]
 Checks out the dotfiles from $THIS_DIR into \$HOME.
 
 Options:
-    -b <branch>     Use <branch> for \$HOME (default "home")
-    -B <branch>     Same as -b but allow existing branch names; use with care.
+    -b <branch>     Create new branch <branch> for \$HOME (default "home")
+    -B <branch>     Use existing branch <brancH> for \$HOME; use with care.
     -f, --force     Overwrite locally modified versions of dotfiles in \$HOME.
 EOF
 }
@@ -26,17 +26,22 @@ OPTS=$(getopt -o 'hfb:B:' -l 'help,force' -n "$PROG" -- "$@")
 eval set -- "$OPTS"
 
 FORCE=
-BRANCH=home
-BRANCH_FLAG=-b
+BRANCH_FLAG="-b home --track"
+COMMITISH=master
 while (( $# > 0 )); do
     case "$1" in
         -f|--force)
             FORCE=-f
             shift
             ;;
-        -b|-B)
-            BRANCH_FLAG="$1"
-            BRANCH="$2"
+        -b)
+            BRANCH_FLAG="-b $2 --track"
+            COMMITISH=master
+            shift 2
+            ;;
+        -B)
+            BRANCH_FLAG=
+            COMMITISH="$2"
             shift 2
             ;;
         -h|--help)
@@ -59,7 +64,7 @@ while (( $# > 0 )); do
 done
 
 echo "Creating fake worktree ~/.dotfiles"
-git worktree add $BRANCH_FLAG "$BRANCH" --track --no-checkout ~/.dotfiles master
+git worktree add $BRANCH_FLAG --no-checkout ~/.dotfiles $COMMITISH
 
 cat >~/.dotfiles/README <<EOF
 This is a fake git worktree. The actual worktree is $HOME.
