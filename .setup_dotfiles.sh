@@ -23,7 +23,7 @@ EOF
 }
 
 OPTS=$(getopt -o 'hfb:B:' -l 'help,force' -n "$PROG" -- "$@")
-set -- $OPTS
+eval set -- "$OPTS"
 
 FORCE=
 BRANCH=home
