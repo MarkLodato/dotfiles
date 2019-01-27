@@ -50,7 +50,7 @@ set backspace=indent,eol,start
 set colorcolumn=+1
 set display+=lastline
 set expandtab
-set formatoptions=tcq1
+set formatoptions=tcqj
 set guioptions-=T
 set guioptions-=m
 set history=5000
