@@ -8,9 +8,9 @@ Quickstart:
 
     $ mkdir -p ~/p
     $ cd ~/p
-    $ git clone git@github.com:MarkLodato/dotfiles.git
-    $ git clone git@github.com:MarkLodato/git-reparent.git
-    $ git clone git@github.com:MarkLodato/scripts.git
+    $ git clone https://github.com/MarkLodato/dotfiles
+    $ git clone https://github.com/MarkLodato/git-reparent
+    $ git clone https://github.com/MarkLodato/scripts
     $ git clone https://github.com/so-fancy/diff-so-fancy
     $ dotfiles/.setup_dotfiles.sh
     $ vim +PlugInstall +qall
