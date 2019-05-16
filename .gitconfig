@@ -63,3 +63,6 @@
 	ignore = ^junk/
 [pager]
 	diff = diff-so-fancy | less
+[url "git@github.com:"]
+	pushInsteadOf = "https://github.com/"
+	pushInsteadOf = "git://github.com/"
