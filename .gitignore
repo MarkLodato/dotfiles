@@ -9,6 +9,7 @@
 .sw[a-z]
 .*.un~
 __pycache__
+*.pyc
 
 # Ignore the gitdir of this repo.
 /.dotfiles
@@ -99,6 +100,8 @@ __pycache__
 /.viminfo
 /.wavemonrc
 /.wireshark
+/.xfce4-session.verbose-log
+/.xfce4-session.verbose-log.last
 /.xinputrc
 /.xscreensaver
 /.xsel.log
@@ -150,6 +153,7 @@ __pycache__
 /.nx/temp
 /.scummvm/logs
 /.vim/.netrwhist
+/.vim/cache
 /.vim/spell
 /.zsh/cache
 
