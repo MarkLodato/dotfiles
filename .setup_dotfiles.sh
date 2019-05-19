@@ -17,7 +17,7 @@ Checks out the dotfiles from $THIS_DIR into \$HOME.
 
 Options:
     -b <branch>     Create new branch <branch> for \$HOME (default "home")
-    -B <branch>     Use existing branch <brancH> for \$HOME; use with care.
+    -B <branch>     Use existing branch <branch> for \$HOME; use with care.
     -f, --force     Overwrite locally modified versions of dotfiles in \$HOME.
 EOF
 }
