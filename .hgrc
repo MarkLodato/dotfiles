@@ -19,5 +19,8 @@ attend = log
 [diff]
 git = 1
 
+[phases]
+new-commit = secret
+
 [git]
 intree = True
