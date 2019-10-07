@@ -303,6 +303,9 @@ augroup END
 " Allow % to work with <>'s in C++.
 autocmd FileType cpp set matchpairs+=<:>
 
+" Do not wrap fstab files.
+autocmd FileType fstab setlocal textwidth=0
+
 " EasyMotion:
 map gs <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
