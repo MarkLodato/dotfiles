@@ -7,6 +7,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'MarkLodato/vim-markdown'  " until tpope pulls the changes
 Plug 'VisIncr'
 Plug 'a.vim'
+Plug 'cespare/vim-toml'
 Plug 'danro/rename.vim'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'hynek/vim-python-pep8-indent'
