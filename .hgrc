@@ -3,9 +3,6 @@ username = Mark Lodato <lodatom@gmail.com>
 
 [extensions]
 hgext.bookmarks =
-hgext.hg-git = /home/mark/hg-git/hggit
-hgext.mq =
-hgext.convert =
 color =
 hgk =
 pager =
