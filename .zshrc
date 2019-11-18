@@ -44,7 +44,6 @@ alias calc='noglob calc'
 zmodload zsh/mathfunc
 autoload zmathfuncdef
 
-zmathfuncdef log2 'log($1)/log(2)' 2>/dev/null
 zmathfuncdef lnPr '(lgamma(($1)+1)-lgamma(($1)-($2)+1))/log(2)' 2>/dev/null
 zmathfuncdef lnCr '(lgamma(($1)+1)-lgamma(($1)-($2)+1)-lgamma(($2)+1))/log(2)' 2>/dev/null
 zmathfuncdef nPr '2 ** lnPr(($1),($2))' 2>/dev/null
