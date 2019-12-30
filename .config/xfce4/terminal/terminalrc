@@ -33,6 +33,10 @@ MiscToolbarDefault=FALSE
 MiscUseShiftArrowsToScroll=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 ScrollingLines=100000
-TabActivityColor=#262656568080
 TitleMode=TERMINAL_TITLE_REPLACE
+MiscShowRelaunchDialog=TRUE
+MiscNewTabAdjacent=FALSE
+MiscSearchDialogOpacity=100
+MiscShowUnsafePasteDialog=TRUE
+ColorPalette=#000029;#cc0000;#4e9a06;#c4a000;#3465a4;#75507b;#06989a;#d3d7cf;#555753;#ef2929;#8ae234;#fce94f;#739fcf;#ad7fa8;#34e2e2;#eeeeec
 
