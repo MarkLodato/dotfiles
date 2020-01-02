@@ -401,6 +401,11 @@ zstyle ':completion:*:(rm|ls|cp|mv):*' ignore-line true
 # ▶ cd ~/git/repo/subdir                                              hostname
 # …………………………………………………………………………………………………………………………… (master) ~/git/repo/subdir …
 # ▶                                                                   hostname
+#
+# Naming convention used below:
+#                                                 ┌"data"──────────────────┐
+# ┌"fill" ──────────────────────────────────────┐ ┌"git"─┐ ┌"path"─────────┐
+# …………………………………………………………………………………………………………………………… (master) ~/git/repo/subdir …
 
 # We need to enable the following so $VARIABLES are expanded in the prompt.
 setopt prompt_subst
@@ -412,10 +417,6 @@ else
   __git_ps1() {}
 fi
 
-# Git branch information to display, or empty.
-PROMPT_GIT_NOCOLOR=
-PROMPT_GIT=
-
 # If 1, show the hostname in the prompt. Only set the default if it is not
 # already set.
 if (( ${+SSH_CLIENT} )); then
@@ -424,50 +425,59 @@ else
   : ${PROMPT_SHOW_HOSTNAME:=0}
 fi
 
+# Git branch information to display, or empty.
+PROMPT_GIT_NOCOLOR=
+PROMPT_GIT=
+
 # Length of PROMPT_GIT_NOCOLOR.
 PROMPT_GIT_WIDTH=0
 
-# This is the data that is shown in the prompt.  Its printable length (i.e.
-# ignoring ANSI color codes) must be no longer than PROMPT_MAX_LENGTH.
+# The value shown in the "path" portion of the prompt, before color and
+# truncation.
 #   %~
 #     Prints $PWD, with $HOME replaced by ~.
+PROMPT_PATH="%~"
+
+# The truncated value shown in the "path" portion of the prompt, before color.
 #   %$N<$REPL<$STRING%<<
 #     Truncates $STRING to length $N, replacing the cut-off characters on
 #     the left (if any) with $REPL.  We delay the expansion of $N until
 #     prompt-time.
-PROMPT_DATA_NOCOLOR="%\$((PROMPT_MAX_WIDTH-PROMPT_GIT_WIDTH))<..<%~%<<"
+PROMPT_PATH_TRUNC="%\$((PROMPT_DATA_MAX_WIDTH_EXPR-PROMPT_GIT_WIDTH))<..<\$PROMPT_PATH%<<"
 
-# This must always be the same length as PROMPT_DATA with all non-printable
-# chraracters (e.g. color codes) removed.  We expand PROMPT_DATA_NOCOLOR now
-# because prompt-time expansion can only go one level deep.
+# The "data" portion of the prompt, with color.
+#
+# We expand PROMPT_PATH_TRUNC now because prompt-time expansion can only go one
+# level deep.
 #   %22F...%f
 #     Highlights ... with color 22 (dark green).
-PROMPT_DATA="\$PROMPT_GIT%22F$PROMPT_DATA_NOCOLOR%f"
+PROMPT_DATA="\$PROMPT_GIT%22F$PROMPT_PATH_TRUNC%f"
 
-# Length of PROMPT_DATA_NOCOLOR, computed at prompt-time.
+# Math expression returning the length of PROMPT_DATA.
 #   ${(%%)FOO}
 #     Performs full prompt expansion of $FOO.
 #   ${#BAR}
 #     Computes the number of characters in $BAR.
-PROMPT_DATA_WIDTH="(\${#\${(%%)PROMPT_DATA_NOCOLOR}}+PROMPT_GIT_WIDTH)"
+PROMPT_DATA_WIDTH_EXPR="(\${#\${(%%)PROMPT_PATH_TRUNC}}+PROMPT_GIT_WIDTH)"
 
-# Maximum width of PROMPT_DATA_NOCOLOR.
+# Math expression returning the maximum width of PROMPT_DATA.
 #   9 = 5 (always display at least this many fill characters on the left)
 #     + 2 (spaces surrounding PROMPT_DATA)
 #     + 1 (the right-hand '…')
 #     + 1 (space at end)
-PROMPT_MAX_WIDTH="COLUMNS-9"
+PROMPT_DATA_MAX_WIDTH_EXPR="(COLUMNS-9)"
 
-# Same as above, but ignoring the minimum fill width.
-PROMPT_FILL_MAX_WIDTH="COLUMNS-4"
+# Math expression returning the maximum width of PROMPT_FILL, i.e. when
+# PROMPT_DATA is empty. Calculation is the same as PROMPT_DATA_MAX_WIDTH_EXPR
+# but ignoring the minimum fill width.
+PROMPT_FILL_MAX_WIDTH_EXPR="(COLUMNS-4)"
 
-# The horizontal rule; size is computed dynamically at prompt-time.  Note that
-# we expand the values inside $(()) now.
+# The horizontal rule; size is computed dynamically at prompt-time. Note that
+# we expand the $*_WIDTH_EXPR values now but the value will still be computed
+# at prompt-time.
 #   ${(r.$LENGTH..$FILL.):-}
 #     Repeats $FILL for $LENGTH characters.
-#   5
-#     Same value used in computation of $PROMPT_MAX_WIDTH
-PROMPT_FILL="\${(r.\$((${PROMPT_FILL_MAX_WIDTH}-$PROMPT_DATA_WIDTH))..….):-}"
+PROMPT_FILL="\${(r.\$((${PROMPT_FILL_MAX_WIDTH_EXPR}-$PROMPT_DATA_WIDTH_EXPR))..….):-}"
 
 # The main prompt.  Note that it contians an embedded newline.
 #   %94F...$f
