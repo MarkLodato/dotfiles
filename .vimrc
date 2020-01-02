@@ -203,7 +203,7 @@ vnoremap <Leader>s :sort<CR>
 let g:big_window_signify=1
 function! BigWindow()
   top vsplit
-  set lines=90
+  set lines=86
   if g:big_window_signify
     set columns=165
     SignifyEnable
