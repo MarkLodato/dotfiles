@@ -52,8 +52,10 @@ set colorcolumn=+1
 set display+=lastline
 set expandtab
 set formatoptions=tcqj
+set guioptions-=L
 set guioptions-=T
 set guioptions-=m
+set guioptions-=r
 set history=5000
 set hlsearch
 set incsearch
