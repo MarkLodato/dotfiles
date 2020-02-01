@@ -40,9 +40,12 @@ if !filereadable(expand('~/.at_google'))
 endif
 
 call plug#end()
-if exists("glaive#Install")
+
+if !filereadable(expand('~/.at_google'))
   call glaive#Install()
+  Glaive codefmt yapf_executable="yapf3"
 endif
+
 " --- End of modules ---
 
 " General options
