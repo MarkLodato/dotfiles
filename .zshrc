@@ -105,9 +105,19 @@ alias gdiffw='git diff --no-index --no-prefix --color-words'
 alias ggrep='git grep --no-index'
 alias chrome='google-chrome'
 alias :e='vim'
-if ! which ack &>/dev/null && which ack-grep &>/dev/null; then
-  alias ack=ack-grep
-fi
+
+rg() {
+  local rg_cmd=(
+    rg
+    --type-add 'test:*_test.*' --type-add 'test:test'
+    --sort=path  # note: this loses parallelism
+  )
+  if [ -t 1 ]; then
+    command "${rg_cmd[@]}" -p "$@" | less -RFXK
+  else
+    command "${rg_cmd[@]}" "$@"
+  fi
+}
 
 # `yesno` is useful for experimentally testing conditionals.
 # Example: [[ $x = *foo* ]]; yesno
