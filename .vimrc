@@ -67,6 +67,7 @@ set incsearch
 set laststatus=2
 set noautowrite
 set noequalalways
+set nofoldenable
 set nrformats-=octal
 set ruler
 set scrolloff=1
