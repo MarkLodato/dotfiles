@@ -408,9 +408,9 @@ zstyle ':completion:*:(rm|ls|cp|mv):*' ignore-line true
 #
 # The prompt looks like this, without hostname if PROMPT_SHOW_HOSTNAME is 0.
 # ……………………………………………………………………………………………………………………………………………………………… ~/non/git/dir …
-# ▶ cd ~/git/repo/subdir                                              hostname
+# 🞂 cd ~/git/repo/subdir                                              hostname
 # …………………………………………………………………………………………………………………………… (master) ~/git/repo/subdir …
-# ▶                                                                   hostname
+# 🞂                                                                   hostname
 #
 # Naming convention used below:
 #                                                 ┌"data"──────────────────┐
@@ -493,9 +493,9 @@ PROMPT_FILL="\${(r.\$((${PROMPT_FILL_MAX_WIDTH_EXPR}-$PROMPT_DATA_WIDTH_EXPR))..
 #   %94F...$f
 #     Highlight ... with color 94 (orange).
 # Useful symbols for future use:
-#   ┌┤└─┘├┐┄ … ▶
+#   ┌┤└─┘├┐┄ … 🞂
 PS1="%94F$PROMPT_FILL%f $PROMPT_DATA %94F…%f
-%94F▶%f "
+%94F🞂%f "
 
 # The secondary prompt.  This is just the default prompt with color.
 PS2='%94F%_>%f '
