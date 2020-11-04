@@ -43,7 +43,6 @@ call plug#end()
 
 if !filereadable(expand('~/.at_google'))
   call glaive#Install()
-  Glaive codefmt yapf_executable="yapf3"
 endif
 
 " --- End of modules ---
