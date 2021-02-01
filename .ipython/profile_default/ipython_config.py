@@ -29,6 +29,10 @@ c.TerminalIPythonApp.display_banner = False
 c.TerminalInteractiveShell.confirm_exit = False
 c.TerminalInteractiveShell.term_title = True
 
+# The following disables up/down arrow history search, but also stupidly turns
+# on extremely slow completion for which there is no way to disable.
+#c.TerminalInteractiveShell.enable_history_search = False
+
 # Enable 'aimport foo' to turn on autoreloading of module 'foo'.
 c.TerminalIPythonApp.extensions = ['autoreload']
 c.InteractiveShellApp.exec_lines = ['autoreload 1']
@@ -37,7 +41,7 @@ c.InteractiveShellApp.exec_lines = ['autoreload 1']
 # Requires `pip install rlipython`.
 # TODO: Configure the prompt to look like regular python (>>>). Look in the git
 # history to see how this used to be done before rlipython.
-c.TerminalIPythonApp.interactive_shell_class = 'rlipython.TerminalInteractiveShell'
+#c.TerminalIPythonApp.interactive_shell_class = 'rlipython.TerminalInteractiveShell'
 
 # Set up aliases for shell commands.
 c.AliasManager.user_aliases = [('git', 'git'), ]
