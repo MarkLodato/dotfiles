@@ -30,6 +30,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tsandall/vim-rego'
 Plug 'vim-jp/cpp-vim'
 Plug 'vim-scripts/svg.vim'
 
