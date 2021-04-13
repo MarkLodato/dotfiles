@@ -429,7 +429,7 @@ fi
 
 # If 1, show the hostname in the prompt. Only set the default if it is not
 # already set.
-if (( ${+SSH_CLIENT} )); then
+if (( ${+SSH_CLIENT} )) && ! (( ${+TMUX} )) ; then
   : ${PROMPT_SHOW_HOSTNAME:=1}
 else
   : ${PROMPT_SHOW_HOSTNAME:=0}
