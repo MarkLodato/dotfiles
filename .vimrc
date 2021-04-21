@@ -1,10 +1,8 @@
 " --- Start of modules ---
 call plug#begin('~/.vim/plugged')
 
-"Plug 'tpope/vim-markdown'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'MarkLodato/vim-markdown'  " until tpope pulls the changes
 Plug 'VisIncr'
 Plug 'a.vim'
 Plug 'cespare/vim-toml'
@@ -26,6 +24,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-liquid'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
