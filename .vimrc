@@ -3,8 +3,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'VisIncr'
-Plug 'a.vim'
 Plug 'cespare/vim-toml'
 Plug 'chrisbra/unicode.vim'
 Plug 'danro/rename.vim'
@@ -31,6 +29,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tsandall/vim-rego'
 Plug 'vim-jp/cpp-vim'
+Plug 'vim-scripts/VisIncr'
+Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/svg.vim'
 
 if !filereadable(expand('~/.at_google'))
