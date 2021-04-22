@@ -244,6 +244,9 @@ vmap <C-x> :I -1<CR>
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
+" vim-markdown
+let g:markdown_fenced_languages = [ 'bash', 'borg', 'build=bzl', "c++=cpp", 'cpp', 'dot', 'html', 'javascript', 'json', 'jsonc=javascript', 'proto', 'python', 'sh', 'shell=bash', 'sql', 'textproto=textpb' ]
+
 " vim-visualstar
 " Do not map S-LeftMouse, which affects highlighting in visual mode.
 let g:visualstar_no_default_key_mappings = 1
