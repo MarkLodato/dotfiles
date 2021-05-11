@@ -75,6 +75,7 @@ set shiftwidth=2
 set showcmd
 set sidescrolloff=5
 set softtabstop=2
+set splitright
 set suffixes+=.pdf,.ps,.lo,.la
 set suffixes-=.h
 set tags+=~/.tags
