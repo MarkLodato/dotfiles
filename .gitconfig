@@ -27,8 +27,6 @@
 	lb = !bash -c 'f() { git log --graph --decorate --oneline --date-order \"$@\" \"$(git merge-base --octopus \"$@\")^!\" ";" } ";" f \"${1-HEAD}\" \"${2-upstream}\" \"${@:3}\"' -
 [branch]
 	autoSetupMerge = always
-[init]
-	templatedir = ~/.git_template
 [interactive]
 	singlekey = 1
 [log]
