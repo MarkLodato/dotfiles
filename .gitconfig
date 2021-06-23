@@ -25,6 +25,7 @@
 	locate = !sh -c 'cd \"$GIT_PREFIX\" && git ls-files \"$(git rev-parse --show-cdup)\" | ([ "$#" -eq 0 ] && cat || grep --color=auto \"$@\")' -
 	b = recent-branches
 	lb = !bash -c 'f() { git log --graph --decorate --oneline --date-order \"$@\" \"$(git merge-base --octopus \"$@\")^!\" ";" } ";" f \"${1-HEAD}\" \"${2-upstream}\" \"${@:3}\"' -
+	u = remote update -p
 [branch]
 	autoSetupMerge = always
 [interactive]
