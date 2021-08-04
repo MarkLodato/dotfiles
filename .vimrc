@@ -170,6 +170,16 @@ nnoremap <Leader>K K
 vnoremap J j
 vnoremap <Leader>J J
 
+" Digraphs
+digraph vv 10003  " CHECK MARK (✓)
+digraph VV 10004  " HEAVY CHECK MARK (✔)
+digraph vV 9989   " WHITE HEAVY CHECK MARK (✅)
+digraph xx 10007  " BALLOT X (✗)
+digraph XX 10008  " HEAVY BALLOT X (✘)
+digraph xX 10060  " CROSS MARK (❌)
+digraph up 128077 " THUMBS UP (👍)
+digraph dn 128078 " THUMBS UP (👎)
+
 " Some useful mappings
 map <Leader>m :make<cr>
 cnoremap <A-p> <Up>
