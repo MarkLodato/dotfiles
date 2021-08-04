@@ -251,6 +251,9 @@ let g:alternateRelativeFiles = 1
 vmap <C-a> :I<CR>
 vmap <C-x> :I -1<CR>
 
+" unicode.vim
+nnoremap ga :UnicodeName<CR>
+
 " html.vim
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
