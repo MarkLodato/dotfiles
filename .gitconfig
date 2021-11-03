@@ -20,6 +20,7 @@
 	lt  = log --graph --decorate --oneline
 	lu  = log --graph --decorate --oneline --date-order '@{upstream}..'
 	mergef = merge --ff-only
+	pr = !gh pr
 	pullf = pull --ff-only
 	s = status -sb
 	sync = !hub sync
