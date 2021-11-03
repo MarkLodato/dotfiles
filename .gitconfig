@@ -2,30 +2,28 @@
 	name = Mark Lodato
 	email = lodato@google.com
 [alias]
+	ack = -c color.grep.filename=6 grep --break --heading
+	b = recent-branches
+	co = checkout
 	diffc = diff --cached
-	diffw = diff --color-words
 	diffcw = diff --cached --color-words
+	diffw = diff --color-words
 	diffwc = diff --cached --color-words
 	ds = diff --stat --relative
-	co = checkout
 	k = !sh -c 'gitk \"$@\" &' git-k
-	#k = !sh -c '[ "$#" -eq 0 ] && gitk --all --date-order HEAD || gitk "\"$@\"" &' git-k
-	#kt = !sh -c '[ "$#" -eq 0 ] && gitk --all HEAD || gitk "\"$@\"" &' git-k
 	l   = log --graph --decorate --oneline --date-order
-	lt  = log --graph --decorate --oneline
 	la  = log --graph --decorate --oneline --all --remotes --date-order
 	lat = log --graph --decorate --oneline --all --remotes
+	lb = !bash -c 'f() { git log --graph --decorate --oneline --date-order \"$@\" \"$(git merge-base --octopus \"$@\")^!\" ";" } ";" f \"${1-HEAD}\" \"${2-upstream}\" \"${@:3}\"' -
+	locate = !sh -c 'cd \"$GIT_PREFIX\" && git ls-files \"$(git rev-parse --show-cdup)\" | ([ "$#" -eq 0 ] && cat || grep --color=auto \"$@\")' -
 	ls  = log --graph --decorate --oneline --date-order -5
+	lt  = log --graph --decorate --oneline
 	lu  = log --graph --decorate --oneline --date-order '@{upstream}..'
+	mergef = merge --ff-only
+	pullf = pull --ff-only
 	s = status -sb
 	sync = !hub sync
 	tag-sorted = !git tag | xargs -IT git log -n1 --format=%at-T T | sort -rnk1 | cut -d- -f2-
-	ack = -c color.grep.filename=6 grep --break --heading
-	mergef = merge --ff-only
-	pullf = pull --ff-only
-	locate = !sh -c 'cd \"$GIT_PREFIX\" && git ls-files \"$(git rev-parse --show-cdup)\" | ([ "$#" -eq 0 ] && cat || grep --color=auto \"$@\")' -
-	b = recent-branches
-	lb = !bash -c 'f() { git log --graph --decorate --oneline --date-order \"$@\" \"$(git merge-base --octopus \"$@\")^!\" ";" } ";" f \"${1-HEAD}\" \"${2-upstream}\" \"${@:3}\"' -
 	u = remote update -p
 [branch]
 	autoSetupMerge = always
