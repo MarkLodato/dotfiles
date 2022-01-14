@@ -15,7 +15,7 @@ endif
 
 let colors_name = "darkblue"
 
-hi Normal       guifg=#c0c0c0   ctermfg=gray        guibg=#000040   ctermbg=black
+hi Normal       guifg=#c0c0c0   ctermfg=gray        guibg=#000040
 hi ErrorMsg     guifg=#ffffff   ctermfg=white       guibg=#287eff   ctermbg=33
 hi Visual       guibg=fg        ctermbg=fg          guibg=#8080ff   ctermbg=lightblue
 hi VisualNOS    guibg=fg        ctermbg=fg          guibg=#8080ff   ctermbg=lightblue gui=underline cterm=underline
@@ -61,7 +61,7 @@ hi Statement    guifg=#ffff60   ctermfg=yellow      cterm=none gui=none
 hi PreProc      guifg=#ff80ff   ctermfg=magenta     gui=none cterm=none
 hi type         guifg=#60ff60   ctermfg=green       gui=none cterm=none
 hi Underlined   cterm=underline term=underline
-hi Ignore       guifg=bg        ctermfg=bg
+hi Ignore       guifg=bg        ctermfg=black
 
 hi Pmenu        guifg=#c0c0c0   ctermfg=145         guibg=#404080   ctermbg=60
 hi PmenuSel     guifg=#c0c0c0   ctermfg=145         guibg=#2050d0   ctermbg=26
