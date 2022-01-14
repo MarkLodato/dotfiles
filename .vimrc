@@ -148,6 +148,12 @@ else
   set background=dark
 endif
 
+" Increase default gui size to include the gutter and have more lines.
+if has("gui_running")
+  set columns=82
+  set lines=50
+endif
+
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
