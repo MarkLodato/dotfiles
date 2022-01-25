@@ -50,6 +50,7 @@
 [rebase]
 	autosquash = true
 [diff]
+	colorMoved = dimmed-zebra
 	tool = meld
 	mnemonicprefix = true
 [clangFormat]
