@@ -14,6 +14,7 @@ Quickstart:
     $ git clone https://github.com/so-fancy/diff-so-fancy
     $ dotfiles/.setup_dotfiles.sh
     $ vim +PlugInstall +qall
+    $ sudo apt install libterm-readkey-perl
 
 From now on, use `gd` instead of `git` to manage dotfiles.  Examples:
 
