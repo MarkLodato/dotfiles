@@ -38,6 +38,8 @@ preexec_functions=()
 #                        Aliases / Commands / Variables
 # ----------------------------------------------------------------------------
 
+source ~/.zsh/blaze_functions.zsh
+
 source ~/.zsh/calc.zsh
 alias calchex='noglob calc -b 16'
 alias calc='noglob calc'
