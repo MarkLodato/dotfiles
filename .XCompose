@@ -1,16 +1,53 @@
-include "%L"
-include "%H/.pointless-xcompose/xcompose"
+# Replacement XCompose for things that I can actually remember.
 
-# Note: Anything commented out is already the default. They are listed here for
-# reference.
-
-# Things that are not included above.
+<Multi_key> <less> <minus>              : "←"   U2190   # LEFTWARDS ARROW
+<Multi_key> <bar> <asciicircum>         : "↑"   U2191   # UPWARDS ARROW
+<Multi_key> <asciicircum> <bar>         : "↑"   U2191   # UPWARDS ARROW
+<Multi_key> <minus> <greater>           : "→"   U2192   # RIGHTWARDS ARROW
+<Multi_key> <bar> <v>                   : "↓"   U2193   # DOWNWARDS ARROW
+<Multi_key> <v> <bar>                   : "↓"   U2193   # DOWNWARDS ARROW
+<Multi_key> <equal> <greater>           : "⇒"   U21D2   # RIGHTWARDS DOUBLE ARROW
+<Multi_key> <equal> <less>              : "⇐"   U21D0   # LEFTWARDS DOUBLE ARROW
 <Multi_key> <minus> <minus> <greater>   : "⟶"   U27F6   # LONG RIGHTWARDS ARROW
 <Multi_key> <minus> <minus> <less>      : "⟵"   U27F5   # LONG LEFTWARDS ARROW
 
-# Aliases that I can actually remember.
+<Multi_key> <less> <equal>              : "≤"   U2264   # LESS-THAN OR EQUAL TO
+<Multi_key> <greater> <equal>           : "≥"   U2265   # GREATER-THAN OR EQUAL TO
+<Multi_key> <exclam> <equal>            : "≠"   U2260   # NOT EQUAL TO
+<Multi_key> <slash> <equal>             : "≠"   U2260   # NOT EQUAL TO
+<Multi_key> <asciitilde> <asciitilde>   : "≈"   U2248   # ALMOST EQUAL TO
+<Multi_key> <asciitilde> <equal>        : "≅"   U2245   # APPROXIMATELY EQUAL TO
+<Multi_key> <i> <n>                     : "∈"   U2208   # ELEMENT OF
+<Multi_key> <n> <i>                     : "∉"   U2209   # NOT AN ELEMENT OF
+<Multi_key> <o> <slash>                 : "∅"   U2205   # EMPTY SET
+<Multi_key> <0> <slash>                 : "∅"   U2205   # EMPTY SET
+<Multi_key> <plus> <minus>              : "±"   U00B1   # PLUS MINUS SIGN
+<Multi_key> <asterisk> <x>              : "⨯"   U2A2F   # CROSS PRODUCT
+
+<Multi_key> <period> <period>           : "…"   ellipsis # HORIZONTAL ELLIPSIS
+<Multi_key> <bar> <period>              : "⋮"   U22EE   # VERTICAL ELLIPSIS
+<Multi_key> <d> <e> <g>                 : "°"   degree  # DEGREE SIGN
+<Multi_key> <minus> <minus> <period>    : "–"   U2013   # EN DASH
+<Multi_key> <minus> <minus> <minus>     : "—"   U2014   # EM DASH
+<Multi_key> <d> <a> <g>                 : "†"   U2020   # DAGGER
+<Multi_key> <d> <d> <a> <g>             : "‡"   U2021   # DOUBLE DAGGER
+<Multi_key> <s> <o>                     : "§"   U00A7   # SECTION SIGN
+<Multi_key> <P> <P>                     : "¶"   U00B6   # PILCROW SIGN
+<Multi_key> <asterisk> <asterisk>       : "•"   U2022   # BULLET
+<Multi_key> <asterisk> <o>              : "◦"   U25E6   # WHITE BULLET
+<Multi_key> <asterisk> <greater>        : "‣"   U2023   # TRIANGULAR BULLET
+<Multi_key> <underscore> <space>        : "␣"   U2423   # OPEN BOX
+
+<Multi_key> <v> <v>                     : "✓"   U2713   # CHECK MARK
+<Multi_key> <V> <V>                     : "✔"   U2714   # HEAVY CHECK MARK
+<Multi_key> <x> <x>                     : "✗"   U2717   # BALLOT X
+<Multi_key> <X> <X>                     : "✘"   U2718   # HEAVY BALLOT X
+<Multi_key> <t> <u>                     : "👍"  U1F44D  # THUMBS UP SIGN
+<Multi_key> <t> <d>                     : "👎"  U1F44E  # THUMBS DOWN SIGN
+
 <Multi_key> <e> <u> <r>                 : "€"           # EURO SYMBOL
 <Multi_key> <l> <b>                     : "£"           # POUND SYMBOL
+
 <Multi_key> <A> <l> <p> <h> <a>         : "Α"   U0391   # GREEK CAPITAL ALPHA
 <Multi_key> <a> <l> <p> <h> <a>         : "α"   U03B1   # GREEK SMALL ALPHA
 <Multi_key> <B> <e> <t> <a>             : "Β"   U0392   # GREEK CAPITAL BETA
@@ -60,16 +97,22 @@ include "%H/.pointless-xcompose/xcompose"
 <Multi_key> <Z> <e> <t> <a>             : "Ζ"   U0396   # GREEK CAPITAL ZETA
 <Multi_key> <z> <e> <t> <a>             : "ζ"   U03B6   # GREEK SMALL ZETA
 
-<Multi_key> <i> <n>                     : "∈"   U2208   # ELEMENT OF
-<Multi_key> <n> <i>                     : "∉"   U2209   # NOT AN ELEMENT OF
-
-# Footnote symbols:
-<Multi_key> <d> <a> <g>                 : "†"   U2020   # DAGGER
-<Multi_key> <d> <d> <a> <g>             : "‡"   U2021   # DOUBLE DAGGER
-#<Multi_key> <s> <o>                    : "§"   U00A7   # SECTION SIGN
-#<Multi_key> <P> <P>                    : "¶"   U00B6   # PILCROW SIGN
-
-<Multi_key> <V> <V> : "✓" U2713 # CHECK MARK
-<Multi_key> <X> <X> : "✗" U2717 # BALLOT X — <x> <x> taken by Xorg for multiply
-<Multi_key> <V> <_> : "✔" U2714 # HEAVY CHECK MARK
-<Multi_key> <X> <_> : "✘" U2718 # HEAVY BALLOT X
+<Multi_key> <1> <slash> <2>             : "½"   U00BD   # VULGAR FRACTION ONE HALF
+<Multi_key> <0> <slash> <3>             : "↉"   U2189   # VULGAR FRACTION ZERO THIRDS
+<Multi_key> <1> <slash> <3>             : "⅓"   U2153   # VULGAR FRACTION ONE THIRD
+<Multi_key> <2> <slash> <3>             : "⅔"   U2154   # VULGAR FRACTION TWO THIRDS
+<Multi_key> <1> <slash> <4>             : "¼"   U00BC   # VULGAR FRACTION ONE QUARTER
+<Multi_key> <3> <slash> <4>             : "¾"   U00BE   # VULGAR FRACTION THREE QUARTERS
+<Multi_key> <1> <slash> <5>             : "⅕"   U2155   # VULGAR FRACTION ONE FIFTH
+<Multi_key> <2> <slash> <5>             : "⅖"   U2156   # VULGAR FRACTION TWO FIFTHS
+<Multi_key> <3> <slash> <5>             : "⅗"   U2157   # VULGAR FRACTION THREE FIFTHS
+<Multi_key> <4> <slash> <5>             : "⅘"   U2158   # VULGAR FRACTION FOUR FIFTHS
+<Multi_key> <1> <slash> <6>             : "⅙"   U2159   # VULGAR FRACTION ONE SIXTH
+<Multi_key> <5> <slash> <6>             : "⅚"   U215A   # VULGAR FRACTION FIVE SIXTHS
+<Multi_key> <1> <slash> <7>             : "⅐"   U2150   # VULGAR FRACTION ONE SEVENTH
+<Multi_key> <1> <slash> <8>             : "⅛"   U215B   # VULGAR FRACTION ONE EIGHTH
+<Multi_key> <3> <slash> <8>             : "⅜"   U215C   # VULGAR FRACTION THREE EIGHTHS
+<Multi_key> <5> <slash> <8>             : "⅝"   U215D   # VULGAR FRACTION FIVE EIGHTHS
+<Multi_key> <7> <slash> <8>             : "⅞"   U215E   # VULGAR FRACTION SEVEN EIGHTHS
+<Multi_key> <1> <slash> <9>             : "⅑"   U2151   # VULGAR FRACTION ONE NINTH
+<Multi_key> <1> <slash> <1> <0>         : "⅒"   U2152   # VULGAR FRACTION ONE TENTH
