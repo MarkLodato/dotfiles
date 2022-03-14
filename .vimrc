@@ -254,6 +254,9 @@ command! -range=% -bar ReverseLineOrder <line1>,<line2>call ReverseLineOrder()
 let g:alternateNoDefaultAlternate = 1
 let g:alternateRelativeFiles = 1
 
+" ReplaceWithRegister
+nmap grr grl
+
 " visincr.vim
 vmap <C-a> :I<CR>
 vmap <C-x> :I -1<CR>
