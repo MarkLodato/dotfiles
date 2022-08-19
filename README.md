@@ -6,15 +6,15 @@ This repository contains my Linux dotfiles.
 
 Quickstart:
 
-    $ mkdir -p ~/p
-    $ cd ~/p
-    $ git clone https://github.com/MarkLodato/dotfiles
-    $ git clone https://github.com/MarkLodato/git-reparent
-    $ git clone https://github.com/MarkLodato/scripts
-    $ git clone https://github.com/so-fancy/diff-so-fancy
-    $ dotfiles/.setup_dotfiles.sh
-    $ vim +PlugInstall +qall
-    $ sudo apt install libterm-readkey-perl
+    mkdir -p ~/p
+    cd ~/p
+    git clone https://github.com/MarkLodato/dotfiles
+    git clone https://github.com/MarkLodato/git-reparent
+    git clone https://github.com/MarkLodato/scripts
+    git clone https://github.com/so-fancy/diff-so-fancy
+    dotfiles/.setup_dotfiles.sh
+    vim +PlugInstall +qall
+    sudo apt install libterm-readkey-perl
 
 From now on, use `gd` instead of `git` to manage dotfiles.  Examples:
 
