@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Disable commits to the 'main' branch.
+disallowCommitsOnMain() {
+  branch="$(git rev-parse --symbolic --abbrev-ref HEAD)"
+  case "$branch" in
+    main|master)
+      echo "Committing to branch '$branch' denied (override with \`git -c hooks.allowMain\`)" >&2
+      exit 1
+      ;;
+  esac
+}
+
+getBool() {
+  [ $(git config --type=bool --default=false --get "$1") == true ]
+}
+
+if ! getBool "hooks.allowMain"; then
+  disallowCommitsOnMain "$@"
+fi

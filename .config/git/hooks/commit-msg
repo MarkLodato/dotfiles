@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Automatically add Signed-off-by to every commit.
+addSignedOffBy() {
+  local SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
+  git interpret-trailers --if-exists doNothing --trailer "$SOB" --in-place "$1"
+}
+
+getBool() {
+  [ $(git config --type=bool --default=false --get "$1") == true ]
+}
+
+if getBool "hooks.autoSignoff"; then
+  addSignedOffBy "$@"
+fi
+

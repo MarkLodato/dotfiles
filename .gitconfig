@@ -28,6 +28,8 @@
 	u = remote update -p
 [branch]
 	autoSetupMerge = always
+[core]
+	hooksPath = ~/.config/git/hooks
 [interactive]
 	singlekey = 1
 [log]
