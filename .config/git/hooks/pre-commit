@@ -12,7 +12,7 @@ disallowCommitsOnMain() {
 }
 
 getBool() {
-  [ $(git config --type=bool --default=false --get "$1") == true ]
+  test "$(git config --type=bool --default=false --get "$1")" = true
 }
 
 if ! getBool "hooks.allowMain"; then
