@@ -14,6 +14,7 @@ Quickstart:
     git clone https://github.com/so-fancy/diff-so-fancy
     dotfiles/.setup_dotfiles.sh
     vim +PlugInstall +qall
+    vim '+DownloadUnicode!' +qall
     sudo apt install libterm-readkey-perl zsh hub tmux
     sudo usermod -s "$(command -v zsh)" "${user}"
 
