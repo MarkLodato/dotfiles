@@ -16,7 +16,7 @@ Quickstart:
     vim +PlugInstall +qall
     vim '+DownloadUnicode!' +qall
     sudo apt install libterm-readkey-perl zsh hub tmux
-    sudo usermod -s "$(command -v zsh)" "${user}"
+    sudo usermod -s "$(command -v zsh)" "$USER"
 
 From now on, use `gd` instead of `git` to manage dotfiles.  Examples:
 
