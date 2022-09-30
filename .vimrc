@@ -81,7 +81,9 @@ set suffixes-=.h
 set tags+=~/.tags
 set ttimeout
 set ttimeoutlen=50  " timeout (in ms) for ESC-based keys
-set undodir=~/.vim/undo
+if !has('nvim')
+  set undodir=~/.vim/undo
+endif
 set undofile
 set viminfo='100,/100,:100,@10,h,s10
 set wildmenu
