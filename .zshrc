@@ -589,6 +589,13 @@ if [[ -r /usr/share/google-cloud-sdk/completion.zsh.inc ]]; then
   source /usr/share/google-cloud-sdk/completion.zsh.inc
 fi
 
+# ----------------------------------------------------------------------------
+#                          NVM (Node Version Manager)
+# ----------------------------------------------------------------------------
+
+export NVM_DIR="$HOME/.config/nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh"
+[[ -s "$NVM_DIR/bash_completion" ]] && \. "$NVM_DIR/bash_completion"
 
 # ----------------------------------------------------------------------------
 #                     Machine-specific Configuration (end)
