@@ -1,0 +1,4 @@
+#!/bin/sh
+# Generate brown noise for 12 hours.
+# Source: https://www.reddit.com/r/Ubuntu/comments/31edqm/comment/cq0yu5v/
+exec sox -q -c 2 -r 32000 -n -d -D synth 12:00:00 brownnoise vol 0.2 fade t 3
