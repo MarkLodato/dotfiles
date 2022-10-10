@@ -62,6 +62,7 @@ set guioptions-=m
 set guioptions-=r
 set history=5000
 set hlsearch
+set ignorecase
 set incsearch
 set laststatus=2
 set noautowrite
@@ -74,6 +75,7 @@ set scrolloff=1
 set shiftwidth=2
 set showcmd
 set sidescrolloff=5
+set smartcase
 set softtabstop=2
 set splitright
 set suffixes+=.pdf,.ps,.lo,.la
