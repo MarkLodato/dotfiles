@@ -17,6 +17,7 @@ Plug 'nathangrigg/vim-beancount'
 Plug 'niklasl/vim-rdf'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'rhysd/vim-gfm-syntax'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -273,6 +274,7 @@ let g:html_indent_style1 = "inc"
 
 " vim-markdown
 let g:markdown_fenced_languages = [ 'bash', 'build=bzl', "c++=cpp", 'cpp', 'dot', 'html', 'javascript', 'json', 'jsonc=javascript', 'proto', 'python', 'sh', 'shell=bash', 'sql' ]
+let g:gfm_syntax_highlight_issue_number = 0
 
 " vim-visualstar
 " Do not map S-LeftMouse, which affects highlighting in visual mode.
