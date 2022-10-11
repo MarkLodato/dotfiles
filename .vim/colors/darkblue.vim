@@ -23,6 +23,9 @@ hi Todo         guifg=#d14a14   ctermfg=red         guibg=#1248d1   ctermbg=dark
 hi Search       guifg=#90fff0   ctermfg=white       guibg=#2050d0   ctermbg=darkblue  cterm=underline term=underline
 hi IncSearch    guifg=#b0ffff   ctermfg=darkblue    guibg=#2050d0   ctermbg=gray
 hi SpellBad                                                         ctermbg=52
+hi SpellCap                                                         ctermbg=236
+hi SpellRare                                                        ctermbg=238
+hi SpellLocal                                                       ctermbg=240
 
 hi SpecialKey   guifg=#00ffff   ctermfg=cyan
 hi Directory    guifg=#00ffff   ctermfg=darkcyan
