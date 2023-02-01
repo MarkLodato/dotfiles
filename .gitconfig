@@ -18,7 +18,7 @@
 	locate = !sh -c 'cd \"$GIT_PREFIX\" && git ls-files \"$(git rev-parse --show-cdup)\" | ([ "$#" -eq 0 ] && cat || grep --color=auto \"$@\")' -
 	ls  = log --graph --decorate --oneline --date-order -5
 	lt  = log --graph --decorate --oneline
-	lu  = log --graph --decorate --oneline --date-order '@{upstream}..'
+	lu  = log --graph --decorate --oneline --date-order ^main
 	mergef = merge --ff-only
 	pr = !gh pr
 	pullf = pull --ff-only
