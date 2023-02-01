@@ -19,6 +19,7 @@ Plug 'niklasl/vim-rdf'
 Plug 'ojroques/vim-oscyank'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/vim-gfm-syntax'
 Plug 'thinca/vim-visualstar'
 Plug 'tpope/vim-abolish'
@@ -29,7 +30,6 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'tsandall/vim-rego'
 Plug 'vim-jp/cpp-vim'
 Plug 'vim-scripts/VisIncr'
@@ -287,6 +287,15 @@ silent! xmap <unique> # <Plug>(visualstar-#)
 silent! xmap <unique> g* <Plug>(visualstar-g*)
 silent! xmap <unique> g<kMultiply> <Plug>(visualstar-g*)
 silent! xmap <unique> g# <Plug>(visualstar-g#)
+
+" conflict-marker.vim
+"let g:conflict_marker_highlight_group = ''
+let g:conflict_marker_begin = '^<<<<<<< .*$'
+let g:conflict_marker_common_ancestors = '^||||||| .*$'
+let g:conflict_marker_end   = '^>>>>>>> .*$'
+hi link ConflictMarkerOurs DiffAdd
+hi link ConflictMarkerCommonAncestorsHunk DiffDelete
+hi link ConflictMarkerTheirs DiffChange
 
 " signify.vim
 hi SignifyLineAdd    guibg=#002040
