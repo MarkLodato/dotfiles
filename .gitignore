@@ -28,6 +28,7 @@ __pycache__
 /.audacity-data
 /.avidemux
 /.bash_history
+/.bundle
 /.bzr.log
 /.cache
 /.compiz
@@ -99,6 +100,7 @@ __pycache__
 /.uim.d
 /.viminfo
 /.wavemonrc
+/.wget-hsts
 /.wireshark
 /.xfce4-session.verbose-log
 /.xfce4-session.verbose-log.last
