@@ -144,13 +144,13 @@ set listchars=tab:»\ ,nbsp:␣
 hi default link WhiteSpaceError Error
 match WhiteSpaceError /\(\s\+\%#\@!$\)\|\( \+\ze\t\)/
 
-if has("gui_running") || &t_Co >= 8
-  "colorscheme midnight2
-  colorscheme darkblue
-  " guifont?
-else
-  set background=dark
+" Enable 24-bit truecolor mode under tmux.
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
+set termguicolors
+colorscheme darkblue
 
 " Increase default gui size to include the gutter and have more lines.
 if has("gui_running")

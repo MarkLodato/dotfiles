@@ -48,9 +48,9 @@ hi SignColumn   guifg=#90f020   ctermfg=green       guibg=#000030   ctermbg=234 
 hi ColorColumn                                      guibg=#202050   ctermbg=234     term=none
 
 
-hi DiffAdd                                          guibg=#00008b   ctermbg=darkblue term=none cterm=none
-hi DiffChange                                       guibg=#8b008b   ctermbg=magenta  cterm=none
-hi DiffDelete   guifg=#0000ff   ctermfg=blue        guibg=#008b8b   ctermbg=cyan     gui=bold
+hi DiffAdd                                          guibg=#006020   ctermbg=22
+hi DiffChange                                       guibg=#404080   ctermbg=18
+hi DiffDelete   guifg=NONE      ctermfg=NONE        guibg=#400020   ctermbg=52
 hi DiffText                                         guibg=#ff0000   ctermbg=red      gui=bold cterm=bold
 
 hi Cursor       guifg=#000000   ctermfg=black       guibg=#ffff00   ctermbg=yellow
