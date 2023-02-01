@@ -71,3 +71,5 @@
 [url "git@gitlab.com:"]
 	pushInsteadOf = "https://gitlab.com/"
 	pushInsteadOf = "git://gitlab.com/"
+[init]
+	defaultBranch = main
