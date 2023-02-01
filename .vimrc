@@ -7,6 +7,7 @@ Plug 'cespare/vim-toml'
 Plug 'chrisbra/unicode.vim'
 Plug 'danro/rename.vim'
 Plug 'gerw/vim-HiLinkTrace'
+Plug 'gutenye/json5.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'kongo2002/fsharp-vim'
@@ -273,7 +274,7 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 " vim-markdown
-let g:markdown_fenced_languages = [ 'bash', 'build=bzl', "c++=cpp", 'cpp', 'dot', 'html', 'javascript', 'json', 'jsonc=javascript', 'proto', 'python', 'sh', 'shell=bash', 'sql' ]
+let g:markdown_fenced_languages = [ 'bash', 'build=bzl', "c++=cpp", 'cpp', 'dot', 'html', 'javascript', 'json', 'jsonc=json5', 'json5', 'proto', 'python', 'sh', 'shell=bash', 'sql' ]
 let g:gfm_syntax_highlight_issue_number = 0
 
 " vim-visualstar
