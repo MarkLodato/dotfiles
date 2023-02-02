@@ -371,6 +371,17 @@ vnoremap <Leader>f :FormatLines<CR>
 vnoremap <C-y> :OSCYank<CR>
 nmap <C-y> <Plug>OSCYank
 
+" Automatically enable 'paste' when pasting from the terminal.
+" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
   source ~/.vim/rc-private.vim
