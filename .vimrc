@@ -146,12 +146,27 @@ set listchars=tab:»\ ,nbsp:␣
 hi default link WhiteSpaceError Error
 match WhiteSpaceError /\(\s\+\%#\@!$\)\|\( \+\ze\t\)/
 
-" Enable 24-bit truecolor mode under tmux.
 if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  " Better mouse support, see  :help 'ttymouse'
+  set ttymouse=sgr
+
+  " Enable true colors, see  :help xterm-true-color
+  let &termguicolors = v:true
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+  " Enable bracketed paste mode, see  :help xterm-bracketed-paste
+  let &t_BE = "\<Esc>[?2004h"
+  let &t_BD = "\<Esc>[?2004l"
+  let &t_PS = "\<Esc>[200~"
+  let &t_PE = "\<Esc>[201~"
+
+  " Enable focus event tracking, see  :help xterm-focus-event
+  let &t_fe = "\<Esc>[?1004h"
+  let &t_fd = "\<Esc>[?1004l"
+  execute "set <FocusGained>=\<Esc>[I"
+  execute "set <FocusLost>=\<Esc>[O"
 endif
-set termguicolors
 colorscheme darkblue
 
 " Increase default gui size to include the gutter and have more lines.
@@ -370,17 +385,6 @@ vnoremap <Leader>f :FormatLines<CR>
 " CTRL-Y = yank to clipboard
 vnoremap <C-y> :OSCYank<CR>
 nmap <C-y> <Plug>OSCYank
-
-" Automatically enable 'paste' when pasting from the terminal.
-" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
 
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
