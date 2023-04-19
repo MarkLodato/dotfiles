@@ -383,8 +383,10 @@ nnoremap <Leader>fb :FormatCode<CR>
 vnoremap <Leader>f :FormatLines<CR>
 
 " CTRL-Y = yank to clipboard
-vnoremap <C-y> :OSCYank<CR>
-nmap <C-y> <Plug>OSCYank
+vmap <C-y> <Plug>OSCYankVisual
+nmap <C-y> <Plug>OSCYankOperator
+nmap <C-y><C-y> <C-y>_
+nmap <C-y>y <C-y>_
 
 " Put anything that shouldn't be sync'd to GitHub in the following file.
 if filereadable($HOME.'/.vim/rc-private.vim')
