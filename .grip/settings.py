@@ -1,4 +1,7 @@
 import netrc
-USERNAME, _, PASSWORD = netrc.netrc().hosts['api.github.com']
-HOST = '0.0.0.0'
+try:
+    USERNAME, _, PASSWORD = netrc.netrc().hosts['api.github.com']
+except KeyError:
+    pass
+HOST = 'localhost'
 PORT = 8000
