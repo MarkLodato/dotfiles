@@ -145,6 +145,7 @@ __pycache__
 /.appcfg_oauth2_tokens
 /.gnupg
 /.lastpass
+/.netrc
 /.netrw
 /.nzbget
 
