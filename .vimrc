@@ -82,6 +82,8 @@ set showcmd
 set sidescrolloff=5
 set smartcase
 set softtabstop=2
+set spell
+set spellcapcheck=  " disable checking of capitalization after periods
 set splitright
 set suffixes+=.pdf,.ps,.lo,.la
 set suffixes-=.h
