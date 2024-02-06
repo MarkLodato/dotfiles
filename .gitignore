@@ -31,6 +31,7 @@ __pycache__
 /.bundle
 /.bzr.log
 /.cache
+/.cargo
 /.compiz
 /.compiz-1
 /.composer
@@ -85,6 +86,7 @@ __pycache__
 /.python_history
 /.qt
 /.rnd
+/.rustup
 /.selected_editor
 /.speech-dispatcher
 /.sqlite_history
