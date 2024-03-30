@@ -168,8 +168,10 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   " Enable focus event tracking, see  :help xterm-focus-event
   let &t_fe = "\<Esc>[?1004h"
   let &t_fd = "\<Esc>[?1004l"
-  execute "set <FocusGained>=\<Esc>[I"
-  execute "set <FocusLost>=\<Esc>[O"
+  if exists("&<FocusGained>")
+    execute "set <FocusGained>=\<Esc>[I"
+    execute "set <FocusLost>=\<Esc>[O"
+  endif
 endif
 colorscheme darkblue
 
