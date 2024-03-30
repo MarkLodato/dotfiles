@@ -1,5 +1,5 @@
 export LESS="-iFRXj5$"
-export PATH="$HOME/local/bin:$HOME/p/scripts:$HOME/.local/bin:$PATH"
+export PATH="$HOME/local/bin:$HOME/p/scripts:$HOME/.local/bin:$HOME/.poetry/bin:$PATH"
 
 if [[ -d $HOME/.cargo/bin ]]; then
   PATH="$HOME/.cargo/bin:$PATH"
