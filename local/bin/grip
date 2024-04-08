@@ -1,0 +1,7 @@
+#!/bin/bash
+if ! [[ -e ~/.grip/venv/bin/grip ]]; then
+  echo "grip not found; installing now..."
+  python3 -m venv ~/.grip/venv
+  ~/.grip/venv/bin/pip3 install grip
+fi
+exec ~/.grip/venv/bin/grip "$@"

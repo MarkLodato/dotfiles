@@ -156,6 +156,7 @@ __pycache__
 # Ignore temp / cache files and directories.
 /.curl/cookies
 /.grip/cache-*
+/.grip/venv
 /.nx/temp
 /.scummvm/logs
 /.vim/.netrwhist
