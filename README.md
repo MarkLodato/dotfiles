@@ -29,7 +29,7 @@ new files that should be added to (or ignored by) the repository.
 
 There are two branches:
 
-*   `master`, which is checked out at `~/p/dotfiles` and is pushed to GitHub
+*   `main`, which is checked out at `~/p/dotfiles` and is pushed to GitHub
 *   `home`, which is checked out at `~` and is local to the machine
 
 To pull changes from GitHub:
@@ -53,7 +53,7 @@ an alias, `gd`. This way we only manage dotfiles intentionally.
 
 We also maintain two separate
 [worktrees](https://git-scm.com/docs/git-worktree), `~` and `~/p/dotfiles`, on
-branches `home` and `master`, respectively. This dual-worktree setup allows us
+branches `home` and `main`, respectively. This dual-worktree setup allows us
 to carefully control what gets pushed to GitHub. It also allows us to avoid
 messing up our live dotfiles with merge conflicts.
 

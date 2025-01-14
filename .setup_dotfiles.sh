@@ -27,7 +27,7 @@ eval set -- "$OPTS"
 
 FORCE=
 BRANCH_FLAG="-b home --track"
-COMMITISH=master
+COMMITISH=main
 while (( $# > 0 )); do
     case "$1" in
         -f|--force)
@@ -36,7 +36,7 @@ while (( $# > 0 )); do
             ;;
         -b)
             BRANCH_FLAG="-b $2 --track"
-            COMMITISH=master
+            COMMITISH=main
             shift 2
             ;;
         -B)
