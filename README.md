@@ -6,6 +6,7 @@ This repository contains my Linux dotfiles.
 
 Quickstart:
 
+    sudo apt install vim zsh tmux ripgrep git hub libterm-readkey-perl
     mkdir -p ~/p
     cd ~/p
     git clone https://github.com/MarkLodato/dotfiles
@@ -15,7 +16,6 @@ Quickstart:
     dotfiles/.setup_dotfiles.sh
     vim +PlugInstall +qall
     vim '+UnicodeDownload!' +qall
-    sudo apt install libterm-readkey-perl zsh hub tmux
     sudo usermod -s "$(command -v zsh)" "$USER"
 
 From now on, use `gd` instead of `git` to manage dotfiles.  Examples:
