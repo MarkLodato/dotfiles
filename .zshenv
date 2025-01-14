@@ -1,5 +1,6 @@
 export LESS="-iFRXj5$"
 export PATH="$HOME/local/bin:$HOME/p/scripts:$HOME/.local/bin:$HOME/.poetry/bin:$PATH"
+export EDITOR=vim
 
 if [[ -d $HOME/.cargo/bin ]]; then
   PATH="$HOME/.cargo/bin:$PATH"
